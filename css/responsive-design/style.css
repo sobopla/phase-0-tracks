@@ -22,8 +22,9 @@ cite {
 there is some difference on where the center of the thing is and
 on whitespace handling*/
 display: inline-block;
+max-width: 90px;
+
 vertical-align: top;
-width: 15%;
 border:  1px solid gray;
 }
 

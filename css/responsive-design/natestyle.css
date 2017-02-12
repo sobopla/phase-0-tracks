@@ -1,0 +1,88 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Gist
+ @Npersall
+ Sign out
+ Watch 0
+  Star 0
+  Fork 967 Npersall/phase-0-tracks
+forked from Devbootcamp/phase-0-tracks
+ Code  Pull requests 0  Projects 0  Pulse  Graphs  Settings
+Branch: master Find file Copy pathphase-0-tracks/css/responsive-design/style.css
+9d8d58e  2 days ago
+@Npersall Npersall added style.css
+1 contributor
+RawBlameHistory     
+67 lines (53 sloc)  823 Bytes
+body {
+ max-width: 960px;
+ min-width: 400px;
+}
+
+blockquote {
+  border-left: 5px solid blue;
+  padding: 15px;
+  margin-left: 0px;
+}
+
+cite {
+  display: block;
+  margin-top: 10px;
+}
+
+#external-links ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+#external-links {
+  width: 15%;
+  display: inline-block;
+  vertical-align: top;
+
+}
+
+main {
+  width: 80%;
+  display: inline-block;
+
+
+}
+
+/* you're welcome to edit the
+image, figure, and figcaption CSS if you'd like, 
+but it's optional! */
+img {
+  width: 100%;
+}
+
+figure {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+figcaption {
+  font-style: italic;
+  text-align: right;
+}
+
+@media screen and (max-width: 400px) and (min-width: 251px) {
+  body {
+    background-color: pink;
+    font-size: .9em;
+  }
+  img {
+    width:80%;
+  }
+}
+
+@media screen and (max-width: 250px) {
+  body {
+    font-size: 60%;
+  }
+}
+Contact GitHub API Training Shop Blog About
+© 2017 GitHub, Inc. Terms Privacy Security Status Help
