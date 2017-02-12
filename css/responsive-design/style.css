@@ -4,6 +4,7 @@ display: inline;
 so the body is 'inline' and the children are blocks inline with it or something like
 that. */
 max-width: 960px;
+
 }
 
 blockquote {
@@ -23,7 +24,6 @@ there is some difference on where the center of the thing is and
 on whitespace handling*/
 display: inline-block;
 max-width: 90px;
-
 vertical-align: top;
 border:  1px solid gray;
 }
