@@ -56,7 +56,7 @@ until hamster_condition
 	
 puts "How old is he?"
 	guessed_age = gets.chomp
-	number_age = guessed_age.to_i
+	number_age = guessed_age.to_s
 
 
 if guessed_age ==""
