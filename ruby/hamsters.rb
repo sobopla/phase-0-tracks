@@ -59,21 +59,21 @@ puts "How old is he?"
 	number_age = guessed_age.to_s
 
 
-if guessed_age ==""
-	age = nil
+# if guessed_age ==""
+# 	age = nil
 
-	puts "Thank you for your input."
+# 	puts "Thank you for your input."
 	
-	hamster_condition = true
+# 	hamster_condition = true
 
-elsif number_age > 0 && number_age < 11
-	age = number_age
+# elsif number_age > 0 && number_age < 11
+# 	age = number_age
 	puts "hamster age is #{number_age}"
 	hamster_condition = true
 
-else 
-	puts "Not a recognized age"
-end
+# else 
+# 	puts "Not a recognized age"
+# end
 end
 
 
