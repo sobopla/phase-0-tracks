@@ -31,13 +31,13 @@ end
 
 
 good_candidate = false
-until good_candidate
+until good_candidate 
 
 	puts "Is  #{hamster_name} a good canadate for addoption (y,n,maybe)?"
 	addoption = gets.chomp
 		
 
-	if addoption =="y"
+	if addoption =="y"#this is a method inside of a method
 		puts "Great! Lets find #{hamster_name} a home!"
 		good_candidate = true
 	elsif addoption =="n"
@@ -56,7 +56,7 @@ until hamster_condition
 	
 puts "How old is he?"
 	guessed_age = gets.chomp
-	number_age = guessed_age.to_s
+	number_age = guessed_age.to_s #this is a local variable
 
 
 # if guessed_age ==""
