@@ -10,8 +10,8 @@ header {
   background-repeat: no-repeat;
   background-position: center;
   
-/*  display:inline-block;
- */ 
+display:inline-block;
+
  vertical-align:top;
  display: table-cell;
 /*   float:left;*/
