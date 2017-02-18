@@ -1,4 +1,6 @@
 
+
+
 puts "Name of hampster?"
 hamster_name = gets.chomp
 puts "Name of hampster is #{hamster_name}"
@@ -37,7 +39,7 @@ until good_candidate
 	addoption = gets.chomp
 		
 
-	if addoption =="y"
+	if addoption =="y" #condition inside o3f aloop
 		puts "Great! Lets find #{hamster_name} a home!"
 		good_candidate = true
 	elsif addoption =="n"
@@ -75,6 +77,8 @@ else
 	puts "Not a recognized age"
 end
 end
+print " You have a hamster named #{hamster_name} who's squeek is at a volume of #{volume_level} . #{hamster_name} is #{fur_color} and they are #{guessed_age} years young. 
+Your answer for their adoptability was #{addoption}. 
 
 
 
