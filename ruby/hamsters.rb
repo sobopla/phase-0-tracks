@@ -77,8 +77,10 @@ until hamster_condition
 		puts "Not a recognized age"
 	end
 end
-print " You have a hamster named #{hamster_name} who's squeek is at a volume of #{volume_level} . #{hamster_name} is #{fur_color} and they are #{guessed_age} years young. 
-Your answer for their adoptability was #{addoption}. 
+print "You have a hamster named #{hamster_name} who's squeek is at a volume of #{volume_level} .
+ #{hamster_name} is #{fur_color} and they are #{guessed_age} years young. 
+the was #{addoption}."
+
 
 
 
