@@ -13,23 +13,23 @@ puts "volume level of hampster #{hamster_name} is #{volume_level}"
 valid_input = false
 until valid_input
 
-puts "Fur color of hamster is?"
-fur_color = gets.chomp
+	puts "Fur color of hamster is?"
+	fur_color = gets.chomp
 	
 
-if fur_color =="brown"
-puts "fur color of #{hamster_name} is brown"
-valid_input = true
-elsif fur_color =="white"
-	puts "fur color of #{hamster_name} is white"
-valid_input = true
-elsif fur_color == "tan"
-	puts "fur color of #{hamster_name} is tan"
+	if fur_color == "brown"
+	puts "fur color of #{hamster_name} is brown"
 	valid_input = true
-else 
-	puts "did not understand try: brown, white or tan"
-end
-end
+	elsif fur_color == "white"
+		puts "fur color of #{hamster_name} is white"
+	valid_input = true
+	elsif fur_color == "tan"
+		puts "fur color of #{hamster_name} is tan"
+		valid_input = true
+	else 
+		puts "did not understand try: brown, white or tan"
+	end
+	end
 
 
 good_candidate = false
@@ -56,26 +56,26 @@ end
 hamster_condition = false
 until hamster_condition
 	
-puts "How old is he?"
+	puts "How old is he?"
 	guessed_age = gets.chomp
 	number_age = guessed_age.to_i
 
 
-if guessed_age ==""
-	age = nil
+	if guessed_age ==""
+		age = nil
 
-	puts "Thank you for your input."
-	
-	hamster_condition = true
+		puts "Thank you for your input."
+		
+		hamster_condition = true
 
-elsif number_age > 0 && number_age < 11
-	age = number_age
-	puts "hamster age is #{number_age}"
-	hamster_condition = true
+	elsif number_age > 0 && number_age < 11
+		age = number_age
+		puts "hamster age is #{number_age}"
+		hamster_condition = true
 
-else 
-	puts "Not a recognized age"
-end
+	else 
+		puts "Not a recognized age"
+	end
 end
 print " You have a hamster named #{hamster_name} who's squeek is at a volume of #{volume_level} . #{hamster_name} is #{fur_color} and they are #{guessed_age} years young. 
 Your answer for their adoptability was #{addoption}. 
