@@ -1,0 +1,26 @@
+
+Use an elevator
+ 
+You are on floor 0
+Go to the elevator
+Face the elevator 
+Find the buttons
+    If you are going up 
+    press the up button
+    If you are going down
+    Press the down button 
+wait until the elevator arrives and opens
+Enter the elevator
+Find the button with the floor number you are going to
+Press it by     
+    count 1 up from the first button until the number equals to the number of the floor you want
+    Press that button
+
+Wait for elevator to stop at floor chosen
+An led screen will display the floor the elevator is at
+    If elevator stops
+    And it is not the chosen floor , wait
+    or if the elevator stops 
+    And it is the chosen floor , get off -mission accomplished!
+    Or Else if the elevator stops and does not open
+press the help button
