@@ -55,19 +55,21 @@ while interview > 0
 		end
 p "#{name}, #{age_put}, #{year}, #{age}, #{garlic}, #{insurance}"
 	case 
-	when name = "Drake Cula" || "Tu Fang"  
-		puts "Definitely a vampire."
+	
 	when age && (garlic || insurance)
 		puts "Probably not a vampire."
-	when age = false && (garlic || insurance)
-		puts "Probably a vampire"
-	when age = false && (garlic && insurance)
+	when !age && (!garlic && !insurance)
 		puts "Almost certainly a vampire."
+	when !age && (!garlic || !insurance)
+		puts "Probably a vampire"
+	when name == "Drake Cula" || "Tu Fang"  
+		puts "Definitely a vampire."
 	else
 		puts "Result inconclusive"
 	end
 	# problem with order above returning the same for the previous entered name, or I don't know about 
 #another kind of loop that exists 
+#does Drake need to be in it's own case or an if ouside of the case, if so where does it go?
 	puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 end
 
