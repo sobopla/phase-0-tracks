@@ -68,6 +68,7 @@ p "#{name}, #{age_put}, #{year}, #{age}, #{garlic}, #{insurance}"
 	end
 	# problem with order above returning the same for the previous entered name, or I don't know about 
 #another kind of loop that exists 
+	puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 end
 
 
