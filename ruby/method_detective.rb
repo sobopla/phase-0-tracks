@@ -18,12 +18,12 @@
 # => "STOP! YOU’RE UNDER ARREST!"
 #
 
-#!!!!####BEST#### 
+#!!!!#### BEST #### 
 #"the usual".concat(" suspects")
 #=> "the usual suspects"
 
-#!!!!####BEST#### 
-#" suspects".prepend("the usual")
+#!!!!#### BEST #### 
+#" suspects".prepend("the usual") 
 # => "the usual suspects"
 
 #"The case of the disappearing last letter".chomp('r')
@@ -37,7 +37,7 @@
 #!!!!#### might be BEST ####
 #"Try the mystery of the first letter".slice(1..-1)
 
-#####NOTES#####
+##### NOTES #####
 #.slice(-1) gets the last letter
 #.slice(0) gets the first letter 
 
