@@ -1,6 +1,6 @@
 #------------- CLIENT DETAILS --------------
 #-----psuedocode
-#enter client info:
+#enter client info: 
 #name gets chomp name into string
 #age gets age to i
 #number of rooms to i
@@ -13,7 +13,7 @@
 #print the input as a hash
 #exit
 
-#prompt user for client's info
+#prompt 
 puts "Enter client information"
 puts "Name:"
 name_of_client = gets.chomp.to_s
@@ -29,6 +29,7 @@ color = gets.chomp
 #puts do they like muted or bright colors?
 # muted = true
 # bright = false
+# if bright = false puts !don't use any black, picky clients think black is a bright color!
 
 
 #hash
@@ -37,39 +38,31 @@ client = {  account: account_no,
 			rooms: room_no,
 			theme: color, 
 }
-#print
+#output
 client.each {|key,value|
   puts "#{key}: #{value}"
 }
-# input = client.values
-# info = client.keys
-# puts info
-# puts input
-# update a key
+#offer change
 puts "Do you need to change the color theme?"
-change = gets.chomp
 if change == "yes"
-  puts "what is the new color theme?"
-  changed_theme = gets.chomp
-  client[:theme] = changed_theme
+	puts "what is the new color theme?" 
+	client[:theme] = gets.chomp #changes the color entry
 end
+
 client.each {|key,value|
   puts "#{key}: #{value}"
 }
 
-#or can write the above this way
-  ##client:[:theme] = gets.chomp
+##another way that's longer code:
+	# if change == "yes"
+	#   puts "what is the new color theme?"
+	#   changed_theme = gets.chomp
+	#   client[:theme] = changed_theme
+	# end
 
 
-# if change == "no"
-# 	end
-# if change == "yes"
-# puts "what is the new color theme?" 
-# 	changed_theme = client.
-# hash = 
-# p client 
-# #make changed_theme = theme - (use !??)
-# #changed_theme = theme
+
+
 
 
 
