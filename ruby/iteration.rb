@@ -19,23 +19,120 @@ p music_genres
 p music_genres_capitalized
 
 #.map with an array
-cities = ["austin", "chicago", "nashville", "dallas", "houston"]
+cities = ["austin", "chicago", "nashville", "dallas", "houston", "asheville"]
 cities.map! do |city| 
 	city.capitalize
 end
 p cities
 
 #.each with a Hash
-cities_and_states = {
+	cities_and_states = {
 	"austin" => "texas",
 	"chicago" => "illinois",
 	"nashville" => "tennessee",
 	"dallas" => "texas",
-	"houston" => "texas"
+	"houston" => "texas",
+	"asheville" => "north carolina"
 }
 cities_and_states.each do |city, state|
 	puts "#{city} is in #{state}"
+	#if in symbol will need to be put in string to 
 end
+#1.  method that iterates through items , deleting
+#----------------ARRAY----------------------#
+a = [1,2,3,4,5,6,7]
+#1 method that deletes items less than 5 
+
+a.delete_if { |i| i < 5 }
+
+#----------------HASH-----------------------#
+#loop through the cities to check the state
+# for each city check the state, for each key check it's value , if value == texas, then delete
+
+def delete_texas(places_hash)
+	places_hash.delete_if {|city, state| state == "texas"
+	}
+end
+delete_texas(cities_and_states)
+p cities_and_states
+
+#now the hash has no texas cities
+
+#2. method filters a data structure for only items that do satisfy a certain condition
+#2 ----------------ARRAY----------------------#
+
+#2 method that keeps numbers less than 5
+
+def  keep(a)
+	a.select { |i| i < 5 }
+end
+#2 ----------------HASH----------------------#
+# will only work if destructive above wasn't performed
+#how do I keep the original cities_and_states for having this method placed here in the code , and where would the destructive need to go? after this method?
+
+	#since the above was destructive now I will write the hash with keys 
+city_state = {
+  texas: ["austin","dallas","houston"],
+  illinois: ["chicago","springfield"],
+  tennessee: ["nashville","memphis"],
+  north_carolina: ["asheville"]
+}
+non_texas = city_state.select do |state,city|
+  state != :texas
+end
+arr = non_texas.values
+puts arr
+array_flat = non_texas.values.flatten #makes it it's own array
+
+#>>>>??? how would I do this on the cities_and_states above without symbols??
+
+
+
+#3 method that filters data for only items satisfying a certain condition - numbers greater than 5
+#3 ------------------- ARRAY ------------------------
+		#### fix this ####
+		# def = over_5
+		# 	a.reject { |i| i < 5 } #doesn't work
+		# end
+
+		### or ###
+		#letters.include?('z') => false
+		#letters.include?('a') => true
+
+		#has_value?('city/state') => true
+#3 -------------------- HASH -----------------
+
+#>>>>>> ???? HAVING TROUBLE WITH THE FOLLOWING:
+	#method that filters a data structure for only items that start with the letter a
+		##use .split for the string
+
+		# def a_cities
+		#   city_w_a = []
+		#   cities_and_states.each do |city|
+		#     if cities.index(city.split('')[0] == "a" )
+		#     city_w_a << city
+		#     end 
+		#   end
+		# puts "cities #{city_w_a}"
+		#  #p cities_and_states(a_cities)
+		# end
+
+#4. A method that will remove items from a data structure until the condition in the block evaluates to false, then stops 
+#4. ------------------- ARRAY ----------------
+
+def delete_letters
+ letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n"]
+  puts "The original array is #{letters}"
+  letters.each do |letr|
+    while letters.length > 0
+      puts "list of letters: #{letters}"
+      letters.delete_at(-1)
+    end  
+  end  
+end
+#4. ------------------- HASH  ----------------
+
+
 
 
 
