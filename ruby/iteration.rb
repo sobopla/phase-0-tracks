@@ -100,18 +100,15 @@ array_flat = non_texas.values.flatten #makes it it's own array
 
 #>>>>>> ???? HAVING TROUBLE WITH THE FOLLOWING:
 	#method that filters a data structure for only items that start with the letter a, if start with the letter a , then = true
-		##use .split for the string
+#all cities are in values
+#keys have a state and city
 
-		# def a_cities
-		#   city_w_a = []
-		#   cities_and_states.each do |city|
-		#     if cities.index(city.split('')[0] == "a" )
-		#     city_w_a << city / or = true
-		#     end 
-		#   end
-		# puts "cities #{city_w_a}"
-		#  #p cities_and_states(a_cities)
-		# end
+#give a array of values (i.e. all cities)
+allCities = city_state.values.flatten #gives nested array so turn into one array 
+p allCities #print all cities
+#find all cities that begin with an a
+aCity = allCities.select {|city| city.start_with?("a") }
+puts aCity #output cities with a
 
 #4. A method that will remove items from a data structure until the condition in the block evaluates to false, then stops 
 #4. ------------------- ARRAY ---------------- not a good example
