@@ -61,7 +61,7 @@ p cities_and_states #now the hash has no texas cities and is permanently altered
 
 #method that keeps numbers less than 5
 def  keep(a)
-	a.select { |i| i < 5 }
+	a.keep_if { |i| i < 5 }
 end
 
 #2 ----------------HASH----------------------#
@@ -83,7 +83,9 @@ array_flat = non_texas.values.flatten #makes it it's own array
 
 #3 method that filters data for only items satisfying a certain condition - numbers greater than 5
 #3 ------------------- ARRAY ------------------------
-                   #NEED ARRAY
+ def  select(a)
+	a.select { |i| i < 5 }
+end
 #3 ------------------- HASH ------------------------
 
 #give a array of values (i.e. all cities)
