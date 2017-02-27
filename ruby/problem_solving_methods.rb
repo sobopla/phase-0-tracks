@@ -1,28 +1,25 @@
 #psuedocode
+
+#Release 0
+array = [11,22,33,44,55,]
+def search_array (array, integer)
+	return_index = nil
+	index_place = 0
+		array.each do |num|
+			if array[index_place] == integer
+				return_index = index_place
+			else
+				index_place += 1
+			end
+		end
+	return_index
+	end
+p search_array(array,30)
+
+
+
 fib_array = [0,1]
-#take Fibonacci terms and generate an array
-#check it with fib(100)
-#define fib with 100, 
-#undo the fib sequence
-#fib_sequence does the last number in the fib sequence = 218922995834555169026
-#if it does, it will end with 218922995834555169026
-#fib .last needs to equal 218922995834555169026
-#if it is not true then it is not correct
-#how does the program know when to end. 
-#how do we get the array of the numbers that lead up to the 
-#fibonacci number we're entering
 
-# fib is the array
-# while fib.count < fib_number(100)
-# then go through the algorithm
-# if fib.count == fib_number
-# puts / p array
-
-
-
-#fib_array = [1, 2, 5, 218922995834555169026]
-# puts "did we do this right?"
-# fib_array.last == 218922995834555169026 
 
 #puts "what's your fib number"
 #num = gets.chomp
@@ -37,5 +34,6 @@ end
 
 fib(100)
 
+#didn't get to the last part with my pair. 
 
 
