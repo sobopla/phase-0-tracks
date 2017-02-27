@@ -46,7 +46,7 @@ a = [1,2,3,4,5,6,7]
 a.delete_if { |i| i < 5 }
 
 #----------------HASH-----------------------#
-#loop through the cities to check the state
+#loop through the cities to check the state to delete
 # for each city check the state, for each key check it's value , if value == texas, then delete
 
 def delete_texas(places_hash)
@@ -65,7 +65,6 @@ def  keep(a)
 end
 
 #2 ----------------HASH----------------------#
-#???how do I keep or undo to the original cities_and_states for having this method placed here in the code , and where would the destructive need to go? after this method?
 
 city_state = {
   texas: ["austin","dallas","houston"],
@@ -83,6 +82,9 @@ array_flat = non_texas.values.flatten #makes it it's own array
 
 #3 method that filters data for only items satisfying a certain condition - numbers greater than 5
 #3 ------------------- ARRAY ------------------------
+
+ a = [1,2,3,4,5,6,7]
+
  def  select(a)
 	a.select { |i| i < 5 }
 end
@@ -97,12 +99,11 @@ puts aCity #output cities with a
 
 #4. A method that will remove items from a data structure until the condition in the block evaluates to false, then stops 
 #4. ------------------- ARRAY ---------------- not a good example
-#redo
 
 def delete_letters
  letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n"]
   puts "The original array is #{letters}"
-  letters.each do |letr|
+  letters.drop_while do |letr|
     while letters.length > 0
       puts "list of letters: #{letters}"
       letters.delete_at(-1)
@@ -110,10 +111,5 @@ def delete_letters
   end  
 end
 #4. ------------------- HASH  --------------
-
-
-
-
-
 
 
