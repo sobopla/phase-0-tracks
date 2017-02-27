@@ -65,10 +65,8 @@ def  keep(a)
 end
 
 #2 ----------------HASH----------------------#
-# will only work if destructive above wasn't performed
-#how do I keep or undo to the original cities_and_states for having this method placed here in the code , and where would the destructive need to go? after this method?
+#???how do I keep or undo to the original cities_and_states for having this method placed here in the code , and where would the destructive need to go? after this method?
 
-#since the above was destructive , I will write the hash with symbols as keys 
 city_state = {
   texas: ["austin","dallas","houston"],
   illinois: ["chicago","springfield"],
@@ -81,27 +79,12 @@ end
 arr = non_texas.values
 puts arr
 array_flat = non_texas.values.flatten #makes it it's own array
-	
-	#>>>>??? how would I do this method on the cities_and_states above without symbols??
+#>>>>??? how would I do this method on the cities_and_states above without symbols??
 
 #3 method that filters data for only items satisfying a certain condition - numbers greater than 5
 #3 ------------------- ARRAY ------------------------
-		#### fix this ####
-		# def = over_5
-		# 	a.reject { |i| i < 5 } #doesn't work
-		# end
-
-		### or ###
-		#letters.include?('z') => false
-		#letters.include?('a') => true
-
-		#has_value?('city/state') => true
-#3 -------------------- HASH -----------------
-
-#>>>>>> ???? HAVING TROUBLE WITH THE FOLLOWING:
-	#method that filters a data structure for only items that start with the letter a, if start with the letter a , then = true
-#all cities are in values
-#keys have a state and city
+                   #NEED ARRAY
+#3 ------------------- HASH ------------------------
 
 #give a array of values (i.e. all cities)
 allCities = city_state.values.flatten #gives nested array so turn into one array 
