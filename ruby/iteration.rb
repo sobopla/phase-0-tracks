@@ -46,7 +46,7 @@ a = [1,2,3,4,5,6,7]
 a.delete_if { |i| i < 5 }
 
 #----------------HASH-----------------------#
-#loop through the cities to check the state
+#loop through the cities to check the state to delete
 # for each city check the state, for each key check it's value , if value == texas, then delete
 
 def delete_texas(places_hash)
@@ -109,10 +109,5 @@ def delete_letters
   end  
 end
 #4. ------------------- HASH  --------------
-
-
-
-
-
-
+#not sure
 
