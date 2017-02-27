@@ -82,7 +82,9 @@ array_flat = non_texas.values.flatten #makes it it's own array
 
 #3 method that filters data for only items satisfying a certain condition - numbers greater than 5
 #3 ------------------- ARRAY ------------------------
+
  a = [1,2,3,4,5,6,7]
+
  def  select(a)
 	a.select { |i| i < 5 }
 end
@@ -109,5 +111,5 @@ def delete_letters
   end  
 end
 #4. ------------------- HASH  --------------
-#not sure
+
 

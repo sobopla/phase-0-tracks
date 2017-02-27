@@ -55,13 +55,15 @@ while interview > 0
 		end
 p "#{name}, #{age_put}, #{year}, #{age}, #{garlic}, #{insurance}"
 	case 
-	
+	#if else / 
 	when age && (garlic || insurance)
 		puts "Probably not a vampire."
 	when !age && (!garlic && !insurance)
 		puts "Almost certainly a vampire."
 	when !age && (!garlic || !insurance)
 		puts "Probably a vampire"
+	#can Drake be it's own case theirs multiple / case statement is too big
+	#block passes something into ruby - - pass to 
 	when name == "Drake Cula" || "Tu Fang"  
 		puts "Definitely a vampire."
 	else
