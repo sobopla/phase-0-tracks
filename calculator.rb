@@ -32,5 +32,5 @@ end
 #the index of a, and the index of b added equals
 
 #question 6 psuedocode
-#if an integer is not entered , put wrong input , enter a number
-
+#6 if an integer is not entered , put wrong input , enter a number
+#refer to vampires Drake Cula solution
