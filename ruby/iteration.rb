@@ -111,5 +111,5 @@ def delete_letters
   end  
 end
 #4. ------------------- HASH  --------------
-
+#not sure why I lost this on github
 
