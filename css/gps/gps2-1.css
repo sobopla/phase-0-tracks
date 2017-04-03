@@ -1,0 +1,43 @@
+header {
+  font-family:times;
+  color: red;
+  font-size: 3em;
+  background-color: #dfdfdf;
+}
+
+.column-1 {
+  background-image: url("https://thumbsplus.tutsplus.com/uploads/users/48/posts/23857/preview_image/git_github.png?height=300&width=300");
+  background-repeat: no-repeat;
+  background-position: center;
+  
+display:inline-block;
+
+ vertical-align:top;
+ display: table-cell;
+/*   float:left;*/
+  width: 39%;
+}
+
+.column-2 {
+  background-color: green;
+  /* display:inline-block; */
+  vertical-align:top;
+  display: table-cell;
+  width: 39%;
+/*float: right;*/
+}
+
+footer {
+  background-color: purple;
+  margin: 10px 25px;
+  
+/* clear: both;*/
+}
+
+.column-1:hover {
+  background-color: pink;
+}
+
+section:nth-child(2){
+  color:orange;
+}
