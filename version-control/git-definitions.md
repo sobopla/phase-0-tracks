@@ -8,3 +8,4 @@
 4. **What is a commit?** A commit is a final ‘commitment’ to a change or addition.
 5. **What makes a good commit message?** Using tone and specificity are the best practices for a commit message. Tone should be a command and present tense. Specificity should specify what change was made, to reference while reading the messages.
 6. **What is a merge conflict?** A merge conflict happens when Git sees changes from two or more sources that conflict because perhaps the people working on the same file in their branch changed the same line in the file or deleted it altogether. Git will mark the file as having a conflict. Git will tell you that there are unmerged paths.
+7. **What steps are best to take when a branch is not fully merged?**
