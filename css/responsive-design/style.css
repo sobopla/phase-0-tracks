@@ -16,7 +16,7 @@ cite {
 
 #external-links {/*float:left; works the same as display: inline-block; sorta there is some difference on where the center of the thing is and on whitespace handling*/
   display: inline-block;
-  max-width: 90px;
+  max-width: 20%;
   vertical-align: top;
   border:  1px solid gray;
 }
@@ -27,7 +27,7 @@ cite {
 }
 
 main {
-  width: 70%;
+  width: 75%;
   display: inline-block; /*again float: left; can also work*/
   vertical-align: top;
   border: 1px solid black;
