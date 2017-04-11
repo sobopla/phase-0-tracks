@@ -1,8 +1,3 @@
-body {
-  display: inline; 
-  max-width: 960px;
-}
-
 blockquote {
   border-left: 5px solid blue;
   padding: 15px;
@@ -14,36 +9,21 @@ cite {
   margin-top: 10px;
 }
 
-#external-links {/*float:left; works the same as display: inline-block; sorta there is some difference on where the center of the thing is and on whitespace handling*/
-  display: inline-block;
-  max-width: 20%;
-  vertical-align: top;
-  border:  1px solid gray;
-}
-
 #external-links ul {
   list-style-type: none;
   padding-left: 0px;
 }
 
-main {
-  width: 75%;
-  display: inline-block; /*again float: left; can also work*/
-  vertical-align: top;
-  border: 1px solid black;
-}
-
 /* you're welcome to edit the
 image, figure, and figcaption CSS if you'd like, 
 but it's optional! */
-
-img { 
+img {
   width: 100%;
 }
 
 figure {
   margin-left: 0px;
-  margin-right: 20px;
+  margin-right: 0px;
 }
 
 figcaption {
@@ -51,13 +31,32 @@ figcaption {
   text-align: right;
 }
 
+body {
+  max-width: 960px;
+}
+
+#external-links {
+  width: 20%;
+  min-width: 250px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+main {
+  width: 70%;
+  display: inline-block;
+  vertical-align: top;  
+}
+
 @media screen and (max-width: 500px) {
   body {
     background-color: hotpink;
-    font-size: .9em;
   }
 }
-
-
-
-
+/*counts as two:*/
+@media screen and (max-width: 500px) { 
+  main, #external-links {
+    margin: auto;
+    display: block;
+  }
+}
