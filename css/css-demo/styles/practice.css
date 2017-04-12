@@ -11,6 +11,7 @@
 
 .accomplishments {
 	font-size: .8em;
+
 }
 
 li:first-child {
@@ -21,6 +22,7 @@ section h3 {
 	background-color: pink;
 }
 
-#work-experience h3:first-child {
+#work-experience h3 {
 	background-color: red;
+
 }
