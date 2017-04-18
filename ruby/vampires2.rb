@@ -43,3 +43,26 @@ insurance = gets.chomp.downcase
 		else 
 			insurance = false
 		end
+
+# If the employee got their age right, and is willing to eat garlic bread or sign up for insurance, the result is “Probably not a vampire.”
+if age (garlic || insurance)
+	puts "Probably not a vampire."
+end
+if !age (!garlic || !insurance)
+	puts "Probably a vampire."
+end
+if !age && !garlic && !insurance
+	puts "Almost certainly a vampire"
+end
+case name 
+	when name == "Drake Cula" || "Tu Fang"  
+		puts "Definitely a vampire" 
+	else
+		puts "Result inconclusive"
+	end
+	
+
+	
+
+		
+
