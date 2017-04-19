@@ -32,7 +32,7 @@ employee_count.times do
 			real_age = true
 		end
 
-	puts "Our company cafeteria serves garlic bread. Should we order some for you?"
+	puts "Our company cafeteria serves garlic bread. Should we order some for you? (y/n)"
 	garlic = gets.chomp.downcase
 		if garlic == "y"
 				garlic = true
@@ -40,7 +40,7 @@ employee_count.times do
 				garlic = false
 		end
 
-	puts "Would you like to enroll in the company’s health insurance?"
+	puts "Would you like to enroll in the company’s health insurance? (y/n)"
 	insurance = gets.chomp.downcase
 			if insurance == "y" 
 				insurance = true
