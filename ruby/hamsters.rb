@@ -16,7 +16,7 @@ age = gets.chomp.to_f
 
 # puts "The age is #{age} "
 
-if adoption == "yes" || "ya" || "y" || "yup"
+if adoption == "yes" || adoption == "ya" || adoption == "y" || adoption == "yup"
   adoption = true
   else
   adoption = false
