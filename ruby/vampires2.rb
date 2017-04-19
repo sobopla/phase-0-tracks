@@ -89,6 +89,6 @@ employee_count.times do
 		end
 	end
 	puts vampire
-
+	puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 end
 
