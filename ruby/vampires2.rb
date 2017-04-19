@@ -7,7 +7,7 @@
 # Ask if they want health insurance
  
 puts "What is your name?"
-name = gets.chomp.capitalize
+name = gets.chomp
 
 puts "How old are you?"
 age = gets.chomp.to_i
@@ -22,47 +22,55 @@ year_born = gets.chomp.to_i
 #then age is true (or right as 4.4 says)
 current_year = 2017
 	if year_born + age != current_year
-		age = false
+		real_age = false
 	else
-		age = true
+		real_age = true
 	end
 
 puts "Our company cafeteria serves garlic bread. Should we order some for you?"
 garlic = gets.chomp.downcase
-	if garlic == "yes" || "y"
+	if garlic == "y"
 			garlic = true
 		else 
 			garlic = false
-			
-		end
+	end
 
 puts "Would you like to enroll in the company’s health insurance?"
 insurance = gets.chomp.downcase
-		if insurance == "yes" || "y"
+		if insurance == "y" 
 			insurance = true
 		else 
 			insurance = false
 		end
 
+puts "name is #{name}"
+puts "garlic is #{garlic}"
+puts "insurance is #{insurance}"
+puts "real_age is #{real_age}"
+
 # If the employee got their age right, and is willing to eat garlic bread or sign up for insurance, the result is “Probably not a vampire.”
-if age (garlic || insurance)
-	puts "Probably not a vampire."
-end
-if !age (!garlic || !insurance)
-	puts "Probably a vampire."
-end
-if !age && !garlic && !insurance
-	puts "Almost certainly a vampire"
-end
-case name 
-	when name == "Drake Cula" || "Tu Fang"  
-		puts "Definitely a vampire" 
-	else
-		puts "Result inconclusive"
-	end
-	
+# 
 
-	
+vampire = "inconclusive"
 
-		
+if real_age && (garlic || insurance)
+	vampire = "Probably not a vampire."
+end 
+
+# age = f / garlic = t / insurance = f **OR** 
+# age = f / garlic = f / insurance = t
+if real_age == false && (( garlic && !insurance ) || (!garlic && insurance))
+	vampire = "Probably a vampire."
+end
+
+
+if  real_age == false && (garlic == false && insurance == false)
+	vampire = "Almost certainly a vampire"
+end
+
+if  name == "Drake Cula" || name == "Tu Fang"  
+	vampire = "Definitely a vampire" 
+end
+
+puts vampire
 
