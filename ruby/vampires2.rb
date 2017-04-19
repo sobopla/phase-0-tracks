@@ -48,6 +48,13 @@ employee_count.times do
 				insurance = false
 			end
 
+	allergy = ''
+	until allergy == 'done' || allergy == 'sunshine'
+		puts 'What are your allergies? when done put done'
+		allergy = gets.chomp
+	end
+
+	puts "allergy is #{allergy}"
 	puts "name is #{name}"
 	puts "garlic is #{garlic}"
 	puts "insurance is #{insurance}"
@@ -55,28 +62,32 @@ employee_count.times do
 
 	# If the employee got their age right, and is willing to eat garlic bread or sign up for insurance, the result is “Probably not a vampire.”
 	# 
+	if allergy == 'sunshine'
+		vampire = 'probably a vampire'
+	else
 
-	vampire = "inconclusive"
+		vampire = "inconclusive"
 
-	if real_age && (garlic || insurance)
-		vampire = "Probably not a vampire."
-	end 
 
-	# age = f / garlic = t / insurance = f **OR** 
-	# age = f / garlic = f / insurance = t
-	if real_age == false && (( garlic && !insurance ) || (!garlic && insurance))
-		vampire = "Probably a vampire."
+		if real_age && (garlic || insurance)
+			vampire = "Probably not a vampire."
+		end 
+
+		# age = f / garlic = t / insurance = f **OR** 
+		# age = f / garlic = f / insurance = t
+		if real_age == false && (( garlic && !insurance ) || (!garlic && insurance))
+			vampire = "Probably a vampire."
+		end
+
+
+		if  real_age == false && (garlic == false && insurance == false)
+			vampire = "Almost certainly a vampire"
+		end
+
+		if  name == "Drake Cula" || name == "Tu Fang"  
+			vampire = "Definitely a vampire" 
+		end
 	end
-
-
-	if  real_age == false && (garlic == false && insurance == false)
-		vampire = "Almost certainly a vampire"
-	end
-
-	if  name == "Drake Cula" || name == "Tu Fang"  
-		vampire = "Definitely a vampire" 
-	end
-
 	puts vampire
 
 end
