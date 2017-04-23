@@ -1,43 +1,53 @@
+body {
+
+}
+
 header {
-  font-family:times;
-  color: red;
-  font-size: 3em;
-  background-color: #dfdfdf;
-}
-
-.column-1 {
-  background-image: url("https://thumbsplus.tutsplus.com/uploads/users/48/posts/23857/preview_image/git_github.png?height=300&width=300");
+  background-color: #E2AA58;
+  font-family: 'Asar', serif;
+  font-size: 1.5em;
+  background-image: url("http://15809-presscdn-0-93.pagely.netdna-cdn.com/wp-content/uploads/2016/02/MTIyMjk0NTQwMTU2NjI4MjQ5.jpg");
+  height: auto;
   background-repeat: no-repeat;
-  background-position: center;
-  
-display:inline-block;
-
- vertical-align:top;
- display: table-cell;
-/*   float:left;*/
-  width: 39%;
+  background-position: top;
+  center;
+  color: white;
+  padding: 2%;
+  background-size: 100%;
 }
 
-.column-2 {
-  background-color: green;
-  /* display:inline-block; */
-  vertical-align:top;
-  display: table-cell;
-  width: 39%;
-/*float: right;*/
+header>p {
+  margin-top: 230px;
+}
+
+h1 {
+  height: 220px;
 }
 
 footer {
-  background-color: purple;
-  margin: 10px 25px;
+  background-color: #CEBA9C;
+  /* height: 200px; */
+  text-align: center;
+  position: relative;
+  padding: 50px;
+}
+
+.column-1,
+.column-2 {
   
-/* clear: both;*/
+  display: inline-block;
+  vertical-align: top;
+  width: 40%;
+  padding-left: 1%;
+  margin: 2%;
 }
 
-.column-1:hover {
-  background-color: pink;
+.column-1 {
+  background-color: #FFEBCD;
+  display: table-cell;
 }
 
-section:nth-child(2){
-  color:orange;
+.column-2 {
+  background-color: #FFCE87;
+  display: table-cell;
 }
