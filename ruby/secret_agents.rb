@@ -1,47 +1,41 @@
 
-# W E I T Z E N K O R N 
-# 0 1 2 3 4 5 6 7 8 9 10
-# psuedocode
-# need a encrypt method
-# that advances every letter of a string one letter forward
-# index = 0
-# (advance string letter forward)
-# define index in password
-# advance password.index +1 (forward) 
-# if space is entered then space is equal to an index and not a !
-# space will equal the password index (be a part of it's index)
-# decrypt
-# define the index of the alphabet using a string "abcdefghijklmnopqrstuvwxyz"
-# equate the alphabet index to the password index number
-# move the password index to the alphabet index before the password index in the alphabet
-
-# index += 1
+#Take a string and for each letter, advance it forward by one letter in the alphabet. Space characters will remain a space. Z will return single "a".
 
 def encrypt(password)
   index = 0
   while index < password.length
 	
 		if password[index] == " "
-			password[index] = password[index] 
+		   password[index] = password[index] 
 		elsif password[index] == "z" 
-      	password[i] = "a" 
+      	   password[i] = "a" 
 		else
-			password[index] = password[index].next 
+		   password[index] = password[index].next 
 		end
 	  index += 1
   end
    password
 end
 
+#Decrypt a string. For each character, go back one letter. If character is "a" assign "z". If character is blank space, leave as blank space.
 def decrypt(password)
   index = 0 
+  result = ""
   alphabet = "abcdefghijklmnopqrstuvwxyz"
   while index < password.length
-  password[index] = alphabet[alphabet.index(password[index]) - 1 ]
-  index += 1
+  		if password[index] == " "
+  		   password[index] == " "
+  		else
+  		   previous_letter = alphabet.index(password[index]) -1
+  		   result += alphabet[previous_letter]
+  		#a harder to read way:
+  		#password[index] = alphabet[alphabet.index(password[index]) - 1 ]
+  		end 
+  		index += 1
   end 
-  password
+  result
 end
+
 
 puts 'Would you like to encrypt or decrypt a password?'
 answer = gets.chomp
@@ -67,7 +61,7 @@ end
 	 	# alphabet = "abcdefghijklmnopqrstuvwxyz"
 	 	# letter_spot = alphabet.index(letter) 
 	 	# previous_letter = alphabet[letter_spot-1] 
-	 	# assword[index] = previous_letter
+	 	# password[index] = previous_letter
 
  	#put in alphabet, call the indexes, index = the one before it
 
