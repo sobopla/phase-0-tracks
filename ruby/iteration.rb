@@ -11,7 +11,7 @@ music_list { |genre1, genre2| puts "You can listen to #{genre1} or #{genre2}"}
 # declare an array and a hash, with some data. 
 
 #-----------------ARRAY------------------:
-array = [1, 2, 3, 4, 5]
+array = [1, 2, 3, 4, 5, 6, 77, 9, 19, 20, 43, 2007]
 new_array = []
 
 #array with .each
@@ -22,6 +22,7 @@ p "---original array---"
 p array
 p "new_array of next number:"
 p new_array
+p "-" * 32
 
 #array with map and no !
 #this won't work (I wanted to see what it did):
@@ -36,22 +37,28 @@ p array
 array.map! do |num|
 	num += 3
 end
-p "array + 3:"
+p "array is now + 3:"
 p array #altered array
+p "-" * 32
 
-#array with a delete 
-#?? is this the same as a filter?
+#array with a delete ?? is this the same as a filter?
 p "array is now:"
 p array
-array.delete_if {|i| i < 2}
+array.delete_if {|i| i < 5} #permanently changes array
 puts "array deleting num less than 5:"
 p array
+p "-" * 32
 
 #filter method for array
-p "array is now:"
+p "array is still:"
 p array
-p "filter array with select greater than 3:"
-array.select{|num| num >= 3}
+p "filter array with select > 9 | returns only & needs it's own variable:"
+select_num = array.select{|num| num >= 10} #select won't permanently change array so it has to be set to a variable
+p select_num
+p "-" * 32
+
+#A method that will remove items from a data structure until the condition in the block evaluates to false, then stops 
+p "array is still:"
 p array
 
 #---------------HASH-----------------------
@@ -65,6 +72,7 @@ cities.each do |state, city|
 end
 p "cities each capitalized:"
 p cities
+p "-" * 12
 
 #method that deletes 
 def delete_texas(places)
@@ -78,15 +86,17 @@ p cities
 non_texas = cities.delete_if {|state, city| state == :texas}
 p "non_texas one line for variable code test:"
 p non_texas
-#filter for a hash
-#select
+p "-" * 12
+
+#filter for a hash with select
 non_illinois = cities.select do |state, city|
 	state != :illinois
 end
 p "cities not in Illinois:"
 p non_illinois
 p "original cities"
-
+p cities
+p "-" * 12
 #4. method that will iterate over numbers in an array
 # if the numbers are even , then its true
 # if the numbers are odd , then its false
