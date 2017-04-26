@@ -58,8 +58,17 @@ p select_num
 p "-" * 32
 
 #A method that will remove items from a data structure until the condition in the block evaluates to false, then stops 
-p "array is still:"
-p array
+names = ["sara", "alisa", "jeff", "amy", "joe", "samantha", "pete"]
+p names
+char = "a"
+names.keep_if do |name| #permanently alters hash
+	name.include?(char)
+	end
+p "names that contain letter 'a':"
+p names
+p "-" * 32
+
+
 
 #---------------HASH-----------------------
 
@@ -72,21 +81,22 @@ cities.each do |state, city|
 end
 p "cities each capitalized:"
 p cities
-p "-" * 12
+p "-" * 32
 
 #method that deletes 
 def delete_texas(places)
 	places.delete_if {|state, city| state == :texas}
 end
 
-delete_texas(cities)
+	delete_texas(cities)
+
 p "cities without texas"
 p cities
 #or to not change the original:
 non_texas = cities.delete_if {|state, city| state == :texas}
 p "non_texas one line for variable code test:"
 p non_texas
-p "-" * 12
+p "-" * 32
 
 #filter for a hash with select
 non_illinois = cities.select do |state, city|
@@ -94,12 +104,25 @@ non_illinois = cities.select do |state, city|
 end
 p "cities not in Illinois:"
 p non_illinois
+p "-" * 32
 p "original cities"
 p cities
-p "-" * 12
-#4. method that will iterate over numbers in an array
+p "-" * 32
+
+#4. hash method that will iterate over numbers in an array
 # if the numbers are even , then its true
 # if the numbers are odd , then its false
 # 	remove even numbers from an array until you get to an odd number
 
-#until the 
+char = "e"
+cities.keep_if do |state,city| #permanently alters hash
+	city.include?(char)
+	end
+p "cities that contain letter 'e':"
+p cities
+
+cities.keep_if do |state,city|
+	city.length <= 7
+end
+p "cities with length 7 or less:"
+p cities
