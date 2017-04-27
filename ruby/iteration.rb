@@ -25,3 +25,18 @@ bands.map! do |band|
 end
 p "bands capitalized:"
 p bands
+#---------------------------------------------------
+
+#RELEASE 2 - uncomment method to check code
+# 1. delete
+#a
+
+# bands.delete_if {|band| band.include? "a"}
+# p "bands deleting:"
+# p bands
+
+#h
+
+# groups.delete_if {|group, singer| group == :rolling_stones}
+# p "groups deleting The Rolling Stones"
+# p groups
