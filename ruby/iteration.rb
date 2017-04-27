@@ -70,3 +70,20 @@ p bands
 # groups.reject! {|band, singer| singer.include?("kieth richards")}
 # p "testing if you just put part of the value in nested array"
 # p groups
+
+#4 A method that will remove items from a data structure until the condition in the block evaluates to false, then stops
+#-is drop_while the only one? how many are there?
+##a
+
+# one_word_bands = bands.drop_while do |band| 
+# 	band.include?(" ")
+# end
+# p "finds a band that doesn't include a space but will not return all the bands with spaces"
+# p one_word_bands
+
+#h hash doesn't have one unless you first turn the hash to an array, iterate, then turn back to a hash with to_h or 
+# or you could use a built in method for hashes to get an array of either the keys or values and then use `take_while` on that array
+# with either `hash.keys` or `hash.values`
+#psuedocode
+
+
