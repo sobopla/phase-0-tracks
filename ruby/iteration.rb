@@ -40,3 +40,33 @@ p bands
 # groups.delete_if {|group, singer| group == :rolling_stones}
 # p "groups deleting The Rolling Stones"
 # p groups
+# 2. filter one
+#a
+
+# bands.select!{|band| band.length < 5} #has to be bang to return the right bands
+# p "bands that are four letters or less"
+# p bands
+
+#h
+
+# groups.select {|band, singer| band != :love}
+# p "select groups that are not Love"
+# p groups
+
+#3 filter two
+#a 
+
+# word = "Airplane"
+# bands.keep_if {|band_name| band_name.include?(word)}
+# p "filter method to find bands that have the word Airplane in them"
+# p bands 
+
+#h
+# groups.reject! {|band, singer| band == :love}
+# p "filters groups out that are the band Love"
+# p groups
+
+#testing another one with the nested array values
+# groups.reject! {|band, singer| singer.include?("kieth richards")}
+# p "testing if you just put part of the value in nested array"
+# p groups
