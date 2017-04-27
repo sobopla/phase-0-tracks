@@ -4,11 +4,13 @@ def search_array(arr, num)
 	index = 0
 		arr.each do |x|
 			if arr[index] == num
-				return_index == index
+				return_index = index
 			end
 			index += 1
+		end	
 	return_index
 end
+p search_array(arr,22)
 
 def fib(num)
   fib_array = [0,1]
@@ -28,3 +30,5 @@ end
 
 # while the numbers compared need to be swapped, run the command
 # 	break if the numbers don't need to be swapped , then the sort is done
+# 	def bubble_method(array)
+
