@@ -1,128 +1,89 @@
-def music_list
-	genre1 = "pop"
-	genre2 = "classical"
-	puts "there are lots of music genres"
-	yield(genre1,genre2)
+#RELEASE 1
+
+bands = ["the stooges","love", "the flying burrito brothers", "jefferson airplane", "fleetwood mac"]
+groups = {fleetwood_mac: "stevie nicks", rolling_stones: ["kieth richards","mick jagger"], flying_burrito_brothers: "gram parsons"}
+
+#.each
+#a
+bands.each do |band|
+	p band
 end
+#h
+groups.each do |band, singer|
+	puts "A singer in #{band.to_s.sub(/[_]/, " ")} is #{singer}"
+end #don't know how to get rid of a second '_' (until .include? "_" = false, puts string?)
 
-music_list { |genre1, genre2| puts "You can listen to #{genre1} or #{genre2}"}
-
-
-# declare an array and a hash, with some data. 
-
-#-----------------ARRAY------------------:
-array = [1, 2, 3, 4, 5, 6, 77, 9, 19, 20, 43, 2007]
-new_array = []
-
-#array with .each
-array.each do  |num| num.next #.next does not change original array
-	new_array << num.next
+#.map!
+#a
+p bands
+bands.map! do |band|
+	name = band.split 
+	name.map! do |name|
+		name.capitalize
+	end
+	band = name.join(" ")
 end
-p "---original array---"
-p array
-p "new_array of next number:"
-p new_array
-p "-" * 32
+p "bands capitalized:"
+p bands
+#---------------------------------------------------
 
-#array with map and no !
-#this won't work (I wanted to see what it did):
-# array.map do |num| num += 2
-# 	new_array << num.map 
+#RELEASE 2 - uncomment method to check code
+# 1. delete
+#a
+
+# bands.delete_if {|band| band.include? "a"}
+# p "bands deleting:"
+# p bands
+
+#h
+
+# groups.delete_if {|group, singer| group == :rolling_stones}
+# p "groups deleting The Rolling Stones"
+# p groups
+# 2. filter one
+#a
+
+# bands.select!{|band| band.length < 5} #has to be bang to return the right bands
+# p "bands that are four letters or less"
+# p bands
+
+#h
+
+# groups.select {|band, singer| band != :love}
+# p "select groups that are not Love"
+# p groups
+
+#3 filter two
+#a 
+
+# word = "Airplane"
+# bands.keep_if {|band_name| band_name.include?(word)}
+# p "filter method to find bands that have the word Airplane in them"
+# p bands 
+
+#h
+# groups.reject! {|band, singer| band == :love}
+# p "filters groups out that are the band Love"
+# p groups
+
+#testing another one with the nested array values
+# groups.reject! {|band, singer| singer.include?("kieth richards")}
+# p "testing if you just put part of the value in nested array"
+# p groups
+
+#4 A method that will remove items from a data structure until the condition in the block evaluates to false, then stops
+#-is drop_while the only one? how many are there?
+##a
+
+# one_word_bands = bands.drop_while do |band| 
+# 	band.include?(" ")
 # end
- 
+# p "finds a band that doesn't include a space but will not return all the bands with spaces"
+# p one_word_bands
 
-#array with .map
-p "---original array---" #.map! permanently changes original
-p array 
-array.map! do |num|
-	num += 3
-end
-p "array is now + 3:"
-p array #altered array
-p "-" * 32
-
-#array with a delete ?? is this the same as a filter?
-p "array is now:"
-p array
-array.delete_if {|i| i < 5} #permanently changes array
-puts "array deleting num less than 5:"
-p array
-p "-" * 32
-
-#filter method for array
-p "array is still:"
-p array
-p "filter array with select > 9 | returns only & needs it's own variable:"
-select_num = array.select{|num| num >= 10} #select won't permanently change array so it has to be set to a variable
-p select_num
-p "-" * 32
-
-#A method that will remove items from a data structure until the condition in the block evaluates to false, then stops 
-names = ["sara", "alisa", "jeff", "amy", "joe", "samantha", "pete"]
-p names
-char = "a"
-names.keep_if do |name| #permanently alters hash
-	name.include?(char)
-	end
-p "names that contain letter 'a':"
-p names
-p "-" * 32
+#h hash doesn't have one unless you first turn the hash to an array, iterate, then turn back to a hash with to_h or 
+# or you could use a built in method for hashes to get an array of either the keys or values and then use `take_while` on that array
+# with either `hash.keys` or `hash.values`
+#psuedocode
 
 
-
-#---------------HASH-----------------------
-
-cities = {texas: "austin", illinois: "chicago", california: "sacramento"}
-
-#hash with each to update city
-
-cities.each do |state, city|
-	puts "#{city.capitalize} is in #{state}"
-end
-p "cities each capitalized:"
-p cities
-p "-" * 32
-
-#method that deletes 
-def delete_texas(places)
-	places.delete_if {|state, city| state == :texas}
-end
-
-	delete_texas(cities)
-
-p "cities without texas"
-p cities
-#or to not change the original:
-non_texas = cities.delete_if {|state, city| state == :texas}
-p "non_texas one line for variable code test:"
-p non_texas
-p "-" * 32
-
-#filter for a hash with select
-non_illinois = cities.select do |state, city|
-	state != :illinois
-end
-p "cities not in Illinois:"
-p non_illinois
-p "-" * 32
-p "original cities"
-p cities
-p "-" * 32
-
-#4. hash method that will iterate over numbers in an array
-# if the numbers are even , then its true
-# if the numbers are odd , then its false
-# 	remove even numbers from an array until you get to an odd number
-
-char = "e"
-cities.keep_if do |state,city| #permanently alters hash
-	city.include?(char)
-	end
-p "cities that contain letter 'e':"
-p cities
-
-cities.keep_if do |state,city|
-	city.length <= 7
-end
-p "cities with length 7 or less:"
-p cities
