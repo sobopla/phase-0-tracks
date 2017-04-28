@@ -37,6 +37,16 @@ client = {account: account_no, name: name_of_client, rooms:room_no, theme:color,
 
 client.each {|key, value| puts "#{key}: #{value}"}
 
+#offer change
+puts "Do you need to change the color theme?"
+change = gets.chomp.to_s
+  if change == "yes"
+  	puts "what is the new color theme?" 
+  	theme = gets.chomp.to_s
+  	client[:theme] = theme #changes the color entry
+  end
+
+client.each {|key,value| puts "#{key}: #{value}"}
 
 
 
