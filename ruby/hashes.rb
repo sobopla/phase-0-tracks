@@ -48,6 +48,18 @@ change = gets.chomp.to_s
 
 client.each {|key,value| puts "#{key}: #{value}"}
 
+#offer to update any info (key)
+puts "Do you need to update other info? "
+update = gets.chomp.to_s
+if update == "yes"
+  puts "what other info do you need to update?"
+  info_to_update = gets.chomp.to_sym
+  puts "what is the new data?"
+  data = gets.chomp.to_s 
+  client[info_to_update] = data
+end
+client.each {|key,value| puts "#{key}: #{value}"}
+
 
 
 
