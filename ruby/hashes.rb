@@ -26,10 +26,24 @@ puts "Enter number of rooms to decorate"
 room_no = gets.chomp.to_i
 puts "What is the Color Theme?"
 color = gets.chomp
-puts "Do you prefer a light or dark theme?"
-light = gets.chomp.to_s
-	if light == "light"
-		light = true
+puts "Do you prefer a light or dark palletes?"
+pallete = gets.chomp.to_s
+	if pallete == "light"
+		pallete = true
 	else
-		light = false
+		pallete = false
 	end
+client = {account: account_no, name: name_of_client, rooms:room_no, theme:color, light: pallete}
+
+client.each {|key, value| puts "#{key}: #{value}"}
+
+
+
+
+
+
+
+
+
+
+
