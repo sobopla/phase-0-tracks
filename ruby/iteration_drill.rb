@@ -6,10 +6,45 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 # 1. Iterate through the zombie_apocalypse_supplies array,
 # printing each item in the array separated by an asterisk
 # ----
+p "1"
+zombie_apocalypse_supplies.each {|supply| print supply + " * "} #print is another way on a single line.
+
+#p "1.a" #on a new line use puts
+#zombie_apocalypse_supplies.each {|supply| puts supply + " * "}
+#p 1.b #as a string with quotes
+# zombie_apocalypse_supplies.each {|supply| p supply + " * "}
+
 
 # 2. In order to keep yourself organized, sort your zombie_apocalypse_supplies
 # in alphabetical order. Do not use any special built-in methods.
 # ----
+def alphabetize(arr)
+   n = arr.length - 1
+   index = 0 
+   swapped = true
+   
+   
+    until index > n
+    n.times do |index| if arr[index] > arr[index + 1]
+    
+                       first = arr[index]
+                       second = arr[index + 1]
+                       arr[index] = second
+                       arr[index + 1] = first
+                       swapped = true
+                      end
+            end
+         index += 1 
+  end
+  arr 
+end
+  alphabetize(zombie_apocalypse_supplies)
+
+
+#------------------is sort a special built in method?----------------
+# puts "sort"
+# sorted = zombie_apocalypse_supplies.sort #{|letter, next|}
+# p sorted
 
 # 3. Create a method to see if a particular item (string) is in the
 # zombie_apocalypse_supplies. Do not use any special built-in methods.
@@ -28,7 +63,8 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 # documentation for Arrays.
 other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove",
                             "solar battery", "flashlight"]
-# ----
+combined_survivor_supplies = zombie_apocalypse_supplies + other_survivor_supplies
+puts combined_survivor_supplies.flatten.uniq
 
 # Hash Drills
 
