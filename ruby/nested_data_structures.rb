@@ -1,7 +1,4 @@
-    
-Planet = {
-  Earth: {
-   Continents: {
+Continents: {
       North_America: {
         USA: {
           texas: ["Austin", "Dallas", "Houston"],
@@ -14,7 +11,7 @@ Planet = {
         },  
         Europe: {
           Germany: ['munich','berlin'],
-          Italy: ['Bolzano', 'Milan'['Rome','Arco']],
+          Italy: ['Bolzano', 'Milan','Rome','Arco'],
           France: ['Paris', 'St. Antonin']
         }
       },
@@ -39,3 +36,4 @@ Planet = {
 #p Planet[:Earth][:Continents][:Europe][:Germany][0][2].capitalize
 #p Planet[:Earth][:Continents][:Europe][:Italy].flatten
 p Planet[:Earth][:Continents][:Europe][:Germany].map  {|city| city.capitalize }
+
