@@ -47,3 +47,25 @@ def convert(name)
   reversed.join('')
   
 end 
+
+ # DRIVER 
+ loop do 
+         puts "What is the spy's name?"
+         name = gets.chomp.downcase # deal with capitals
+         break if name == "quit" || name == "done"
+          
+         aka = convert(name) # Perform alias-making method on given name.
+        
+        cap(aka)
+         #hash for names
+           name_info = {"Real_name" => [cap(name)], "Alias" => [cap(aka)]}
+           
+        # puts "The Alias for #{name_info["Real_name"]} is  #{name_info['Alias']}"
+         puts 'The real name of the spy is: '
+         puts name_info["Real_name"] 
+         puts "The alias of the spy is: #{cap(aka)}"
+         p name_info 
+         
+       end
+         #iterate over hash to print out key and values
+      
