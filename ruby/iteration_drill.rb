@@ -24,27 +24,27 @@ zombie_apocalypse_supplies.each {|supply| p supply + " * "} #print is another wa
 
 
 
-def alphabetize(arr)
-   n = arr.length - 1
-   index = 0 
-   swapped = true
-   
-   
-    until index > n
-    n.times do |index| if arr[index] > arr[index + 1]
-    
-                       first = arr[index]
-                       second = arr[index + 1]
-                       arr[index] = second
-                       arr[index + 1] = first
-                       swapped = true
-                      end
-            end
-         index += 1 
-  end
-  arr 
-end
-  alphabetize(zombie_apocalypse_supplies)
+		def alphabetize(arr)
+		   n = arr.length - 1
+		   index = 0 
+		   swapped = true
+		   
+		   
+		    until index > n
+		    n.times do |index| if arr[index] > arr[index + 1]
+		    
+		                       first = arr[index]
+		                       second = arr[index + 1]
+		                       arr[index] = second
+		                       arr[index + 1] = first
+		                       swapped = true
+		                      end
+		            end
+		         index += 1 
+		  end
+		  arr 
+		end
+		  alphabetize(zombie_apocalypse_supplies)
 
 
 # puts "sort"
