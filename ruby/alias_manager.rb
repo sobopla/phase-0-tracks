@@ -12,3 +12,8 @@
 #store the name to be capitalized
 #store the alias to be capitalized
 
+#capitalize method
+def cap(name) 
+  name.split(' ').each {|name| name.capitalize!}.join(' ') 
+end
+
