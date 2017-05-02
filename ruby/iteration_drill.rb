@@ -216,11 +216,32 @@ extinct_animals = {
 
 # 5. We just found out that the Passenger Pigeon is actually not extinct!
 # Remove them from extinct_animals and return the key value pair as a two item array.
-# Find the built-in method that helps you accomplish this in the Ruby documentation
-# for Hashes.
+# Find the built-in method that helps you accomplish this in the Ruby documentationfor Hashes.
 # ----
+		
+
+		p "---------living animals removed as array ----------"
+		living_animals = extinct_animals.assoc("Passenger Pigeon").flatten
+		p living_animals
 
 
+
+#--------------WITH ENUMERABLE??---------FOLLOW UP WITH ADVISOR
+			# print_animals(extinct_animals)
+			# p "-" * 24
+			# p 'remove passenger pig'
+			# x = extinct_animals.reject {|animal| animal == "Passenger Pigeon"} #don't know why this returns nothing without a variable
+			# x.flatten
+			# p "---flatten----"
+			# p x.flatten
+
+			# #--------------ENUMERABLE---------------------#
+			# p "-" * 24
+			# p 'enumerable not equal to Passenger Pigeon:'
+			# y = extinct_animals.find_all {|animal| animal != "Passenger Pigeon"}
+			# y
+			# print_animals(y)
+			
 
 
 
