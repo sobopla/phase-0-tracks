@@ -181,7 +181,7 @@ extinct_animals = {
 
 		 def find_animal(hash,arr)
 		  index = 0
-		  	until index > arr.length
+		  	until index > arr.length - 1
 				if
 				hash.assoc(arr[index]) == nil
 				puts "#{arr[index]} is NOT extinct_animals"
@@ -197,7 +197,8 @@ extinct_animals = {
 	
 		p '-----------lookfor animal-------------'
 
-	    p find_animal(extinct_animals,["Andean Cat","Dodo", "Saiga Antelope", "Passenger Pigeon"])
+	    find_animal(extinct_animals,["Andean Cat","Dodo", "Saiga Antelope", "Passenger Pigeon"])
+	    #don't put p
 	    p "I'm not sure why this printed a blank sentence or if this is wrong because it's a built in method of .assoc but it sorta works??"
 
 
