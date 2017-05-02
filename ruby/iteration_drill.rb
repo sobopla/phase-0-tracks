@@ -31,6 +31,7 @@ zombie_apocalypse_supplies.each {|supply| p supply + " * "} #print is another wa
 		   
 		   
 		    until index > n
+		    	arr.map! {|item| item.downcase}
 		    n.times do |index| if arr[index] > arr[index + 1]
 		    
 		                       first = arr[index]
@@ -45,11 +46,13 @@ zombie_apocalypse_supplies.each {|supply| p supply + " * "} #print is another wa
 		  arr 
 		end
 		  alphabetize(zombie_apocalypse_supplies)
+		 # p 'alpha------------------'
+		 # p zombie_apocalypse_supplies
 
-
-# puts "sort"
-# sorted = zombie_apocalypse_supplies.sort #{|letter, next|}
-# p sorted
+#-------- use of sort
+		# puts "sort"
+		# sorted = zombie_apocalypse_supplies.sort #{|letter, next|}
+		# p sorted
 
 
 
@@ -58,11 +61,15 @@ zombie_apocalypse_supplies.each {|supply| p supply + " * "} #print is another wa
 # ----
 
 
-
-		# zombie_apocalypse_supplies.each {|supply| 
-		# 	if supply == "compass"
-		# 	 puts "includes" 
-		# 	end}
+		def lookfor(arr,supply)
+			arr.each {|item| 
+			if item == supply
+			 return true  #how do I state if it does't have?' 
+			end}
+			return false
+		end
+		p '-----------lookfor compass-------------'
+		lookfor(zombie_apocalypse_supplies,"compass")
 
 
 
@@ -72,11 +79,11 @@ zombie_apocalypse_supplies.each {|supply| p supply + " * "} #print is another wa
 # 4. You can't carry too many things, you've only got room in your pack for 5. Remove items in your zombie_apocalypse_supplies in any way you'd like, leaving only 5. Do not use any special built-in methods.
 # ----
 
-
+	#-----COMMENT OUT TO CHECK CODE-------------
 	# while zombie_apocalypse_supplies.length > 5
 	# 	zombie_apocalypse_supplies.pop
 	# end
-	# p "after pop"
+	# p "----after pop-----"
 	# p zombie_apocalypse_supplies
 
 
@@ -93,6 +100,7 @@ zombie_apocalypse_supplies.each {|supply| p supply + " * "} #print is another wa
 		other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove",
 		                            "solar battery", "flashlight"]
 		combined_survivor_supplies = zombie_apocalypse_supplies + other_survivor_supplies
+		puts '-----------combined supplies-------------'
 		puts combined_survivor_supplies.flatten.uniq
 
 
@@ -115,8 +123,13 @@ extinct_animals = {
 
 
 
-
-
+	def print_animals(extinct_animals)
+		puts '----------animals hash-------------'
+		extinct_animals.each do |animal, year|
+			puts "#{animal}: #{year}"
+		end
+	end
+	print_animals(extinct_animals)
 
 
 
@@ -126,7 +139,14 @@ extinct_animals = {
 # ----
 
 
-
+		extinct_animals_before_2000 = {}
+		extinct_animals.map do |animal,year|
+			if year < 2000
+				extinct_animals_before_2000[animal] = year
+			end
+		end
+		p '-------------extinct_animals_before_2000--------'
+		p extinct_animals_before_2000
 
 
 
