@@ -6,15 +6,23 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 # 1. Iterate through the zombie_apocalypse_supplies array,printing each item in the array separated by an asterisk
 # ----
 
+				#puts has more code and put string
+				#p returning exactly as it evaluates to
 
+				p "------printing supply with p"
+				zombie_apocalypse_supplies.each {|supply| p supply + " * "} #print is another way on a single line but it messes with the rest of the code ???.
 
-p "1"
-zombie_apocalypse_supplies.each {|supply| p supply + " * "} #print is another way on a single line.
+				p "------printing supply with print messes with puts"
+				zombie_apocalypse_supplies.each {|supply| print supply + " * "}
 
-#p "1.a" #on a new line use puts
-#zombie_apocalypse_supplies.each {|supply| puts supply + " * "}
-#p 1.b #as a string with quotes
-# zombie_apocalypse_supplies.each {|supply| p supply + " * "}
+				puts "\n------printing supply with puts"
+				zombie_apocalypse_supplies.each {|supply| puts supply + " * "}
+
+				#p "1.a" #on a new line use puts
+				#zombie_apocalypse_supplies.each {|supply| puts supply + " * "}
+
+				#p 1.b #as a string with quotes
+				# zombie_apocalypse_supplies.each {|supply| p supply + " * "}
 
 
 
@@ -45,11 +53,11 @@ zombie_apocalypse_supplies.each {|supply| p supply + " * "} #print is another wa
 		  end
 		  arr 
 		end
-		  alphabetize(zombie_apocalypse_supplies)
-		 # p 'alpha------------------'
-		 # p zombie_apocalypse_supplies
+		p '----------alphabetize suppies----------------'
+		puts alphabetize(zombie_apocalypse_supplies)
+		 
 
-#-------- use of sort
+		#-------- use of sort
 		# puts "sort"
 		# sorted = zombie_apocalypse_supplies.sort #{|letter, next|}
 		# p sorted
@@ -62,14 +70,10 @@ zombie_apocalypse_supplies.each {|supply| p supply + " * "} #print is another wa
 
 
 		def lookfor(arr,supply)
-			arr.each {|item| 
-			if item == supply
-			 return true  #how do I state if it does't have?' 
-			end}
-			return false
+			arr.each {|item| return true if item == supply}   
 		end
 		p '-----------lookfor compass-------------'
-		lookfor(zombie_apocalypse_supplies,"compass")
+		puts lookfor(zombie_apocalypse_supplies,"compass")
 
 
 
@@ -177,8 +181,34 @@ extinct_animals = {
 # "Saiga Antelope"
 # Do not use any special built-in methods.
 # ----
-#----------WRITE WITHOUT BUILT IN METHOD (same as below)-------------
+#----------METHOD FOR ONE ANIMAL
 		
+		def checkfor(hash,animal)
+			hash.each do |extinct, val|
+				if animal == extinct
+					puts "#{animal} is extinct"
+				end
+			end
+		end
+		p '----------------------------checking for Dodo'
+		checkfor(extinct_animals,"Dodo")
+			
+#-----------CHECK FOR ALL ANIMALS IN AN ARRAY
+		
+		def is_extinct?(hash, arr)
+			arr.each do |animal|
+				if hash[animal] != nil
+					p "#{animal} Is extinct"
+				end
+			end
+		end
+		p '--------------checking whole array of animals ------'
+		species = ["Dodo","Andean Cat","Saiga Antelope"]
+		is_extinct?(extinct_animals,species)
+
+
+
+	
 				#------DOESN'T WORK -----------------------
 				# checkfor = ["Andean Cat", "Dodo","Saiga Antelope"]
 				# if hash[checkfor[1]] == checkfor[1]
@@ -189,7 +219,7 @@ extinct_animals = {
 				# def search(hash,arr) ## DOESN'T WORK
 				# 	index = 1
 				# 	until index > arr.length -1 
-				# 	    hash.each_key do |animal|
+				# 	    hash.each_key do |animal, val|
 
 				# 			if hash[arr[index]] == nil
 				# 				puts "#{arr[index]} is NOT extinct"
@@ -229,7 +259,7 @@ extinct_animals = {
 			end
 		end
 	
-		p '-----------lookfor animal-------------'
+		p '-----------lookfor animal with assoc-------------'
 
 	    find_animal(extinct_animals,["Andean Cat","Dodo", "Saiga Antelope", "Passenger Pigeon"]) #don't put p
 
@@ -271,7 +301,9 @@ extinct_animals = {
 			# x = extinct_animals.reject {|animal| animal == "Passenger Pigeon"} #don't know why this returns nothing without a variable
 			# x.flatten
 			# p "---flatten----"
-			# p x.flatten #WHY ISN'T IT RETURNING ANYTHING????
+			# p x.flatten #WHY ISN'T IT RETURNING ANYTHING
+			# 
+			# ????
 
 			# #--------------ENUMERABLE---------------------#
 			# p "-" * 24
