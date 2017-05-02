@@ -233,7 +233,7 @@ extinct_animals = {
 			# x = extinct_animals.reject {|animal| animal == "Passenger Pigeon"} #don't know why this returns nothing without a variable
 			# x.flatten
 			# p "---flatten----"
-			# p x.flatten
+			# p x.flatten #WHY ISN'T IT RETURNING ANYTHING????
 
 			# #--------------ENUMERABLE---------------------#
 			# p "-" * 24
