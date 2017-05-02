@@ -178,7 +178,7 @@ extinct_animals = {
 # Do not use any special built-in methods.
 # ----
 
-
+#----------EXPERIMENTING WITH BUILT IN METHOD-----------------
 		 def find_animal(hash,arr)
 		  index = 0
 		  	until index > arr.length - 1
@@ -193,13 +193,19 @@ extinct_animals = {
 				end
 			end
 		end
+#----------WRITE WITHOUT BUILT IN METHOD (same as above)-------------
+		#hash[arr[0]] == nil
+		#not extict
+		#else 
+		#extict 
+		# hash["Dodo"]
 		
 	
 		p '-----------lookfor animal-------------'
 
-	    find_animal(extinct_animals,["Andean Cat","Dodo", "Saiga Antelope", "Passenger Pigeon"])
-	    #don't put p
-	    p "I'm not sure why this printed a blank sentence or if this is wrong because it's a built in method of .assoc but it sorta works??"
+	    find_animal(extinct_animals,["Andean Cat","Dodo", "Saiga Antelope", "Passenger Pigeon"]) #don't put p
+
+	    # p "I'm not sure why this printed a blank sentence or if this is wrong because it's a built in method of .assoc but it sorta works??"
 
 
 
