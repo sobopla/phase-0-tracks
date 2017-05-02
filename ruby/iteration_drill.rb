@@ -181,7 +181,7 @@ extinct_animals = {
 
 		 def find_animal(hash,arr)
 		  index = 0
-		  until index > arr.length
+		  	until index > arr.length
 				if
 				hash.assoc(arr[index]) == nil
 				puts "#{arr[index]} is NOT extinct_animals"
@@ -191,8 +191,8 @@ extinct_animals = {
 				puts "#{arr[index]} YES IS IN extinct_animals"
 				index +=1  #== arr[index]
 				end
-		end
 			end
+		end
 		
 	
 		p '-----------lookfor animal-------------'
