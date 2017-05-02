@@ -160,12 +160,13 @@ extinct_animals = {
 # Do not use any special built-in methods.
 # ----
 
+	
 
-
-
-
-
-
+	extinct_animals.map {|animal,year|
+		extinct_animals[animal] = year - 3
+	}
+	p '------------updated year-------------'
+	p extinct_animals
 
 
 
@@ -178,7 +179,26 @@ extinct_animals = {
 # ----
 
 
+		 def find_animal(hash,arr)
+		  index = 0
+		  until index > arr.length
+				if
+				hash.assoc(arr[index]) == nil
+				puts "#{arr[index]} is NOT extinct_animals"
+				index += 1
+				else 
+				hash.assoc(arr[index]) == arr[index]
+				puts "#{arr[index]} YES IS IN extinct_animals"
+				index +=1  #== arr[index]
+				end
+		end
+			end
+		
+	
+		p '-----------lookfor animal-------------'
 
+	    p find_animal(extinct_animals,["Andean Cat","Dodo", "Saiga Antelope", "Passenger Pigeon"])
+	    p "I'm not sure why this printed a blank sentence or if this is wrong because it's a built in method of .assoc but it sorta works??"
 
 
 
