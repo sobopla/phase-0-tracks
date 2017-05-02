@@ -224,6 +224,14 @@ extinct_animals = {
 		living_animals = extinct_animals.assoc("Passenger Pigeon").flatten
 		p living_animals
 
+#--------------FLATTEN THE WHOLE ANIMALS ARRAY GIVING 1 ARRAY FOR KEY , VALUE
+
+
+		p '------animals hash as array with key value flatten(0)------'
+		extinct_animals_arr = extinct_animals.flatten(0)
+		p extinct_animals_arr
+
+
 
 
 #--------------WITH ENUMERABLE??---------FOLLOW UP WITH ADVISOR
