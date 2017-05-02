@@ -179,29 +179,37 @@ extinct_animals = {
 # ----
 #----------WRITE WITHOUT BUILT IN METHOD (same as below)-------------
 		
-	def search(hash,arr)
-		index = 1
-		until index > arr.length -1 
-			if hash[arr[index]] == nil
-				puts "#{arr[index]} is NOT extinct"
-				index +=1
-			else
-				puts "#{arr[index]} is EXTINCT"
-				index +=1
-			end
-		end
-	end
+				#------DOESN'T WORK -----------------------
+				# checkfor = ["Andean Cat", "Dodo","Saiga Antelope"]
+				# if hash[checkfor[1]] == checkfor[1]
+				# 	puts "#{checkfor[1]} is NOT extinct"
+				# end
 
-	search(extinct_animals,["Andean Cat","Dodo", "Saiga Antelope", "Passenger Pigeon"])
+				#------DOESN'T WORK -----------------------
+				# def search(hash,arr) ## DOESN'T WORK
+				# 	index = 1
+				# 	until index > arr.length -1 
+				# 	    hash.each_key do |animal|
 
-		#hash[arr[0]] == nil
-		#not extict
-		#else 
-		#extict 
-		# hash["Dodo"]
+				# 			if hash[arr[index]] == nil
+				# 				puts "#{arr[index]} is NOT extinct"
+				# 				index +=1
+				# 			else
+				# 				puts "#{arr[index]} is EXTINCT"
+				# 				index +=1
+				# 			end
+				# 		end
+				# 	end
+				# end
 
+				#search(extinct_animals,["Andean Cat","Dodo", "Saiga Antelope", "Passenger Pigeon"])
 
-
+				#------DOESN'T WORK BUT USE THIS CONCEPT
+						#hash[arr[0]] == nil
+						#not extict
+						#else 
+						#extict 
+						# hash["Dodo"]
 
 
 
@@ -256,7 +264,7 @@ extinct_animals = {
 
 
 
-#--------------WITH ENUMERABLE??---------FOLLOW UP WITH ADVISOR
+#-----------WITH ENUMERABLE---------FOLLOW UP WITH ADVISOR
 			# print_animals(extinct_animals)
 			# p "-" * 24
 			# p 'remove passenger pig'
