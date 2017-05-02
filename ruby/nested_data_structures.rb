@@ -1,4 +1,4 @@
-Continents: {
+planet = {Continents: {
       North_America: {
         USA: {
           texas: ["Austin", "Dallas", "Houston"],
@@ -10,7 +10,7 @@ Continents: {
                   Peru: ["Peru", "Lima"]
         },  
         Europe: {
-          Germany: ['munich','berlin'],
+          Germany: {munich: ['pub1', 'pub2'], berlin: ['pub1','pub2']},
           Italy: ['Bolzano', 'Milan','Rome','Arco'],
           France: ['Paris', 'St. Antonin']
         }
@@ -26,7 +26,9 @@ Continents: {
       }
    }
   }
-}
+
+planet
+
 #comment out to test:
 #print the cities in germany and italy
 #p Planet[:Earth][:Continents][:Europe][:Germany] + Planet[:Earth][:Continents][:Europe][:Italy]
@@ -35,5 +37,5 @@ Continents: {
 #Capitalize the 3rd letter in the first German city
 #p Planet[:Earth][:Continents][:Europe][:Germany][0][2].capitalize
 #p Planet[:Earth][:Continents][:Europe][:Italy].flatten
-p Planet[:Earth][:Continents][:Europe][:Germany].map  {|city| city.capitalize }
+#p Planet[:Earth][:Continents][:Europe][:Germany].map  {|city| city.capitalize }
 
