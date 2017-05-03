@@ -54,15 +54,28 @@ class Athlete
 		@stamina += 30
 		puts "athlete took steroids and now has #{@stamina} stamina"
 	end
-end
+
+	def get_operation
+		@bones = "titanium"
+		puts "Athlete is recovering but now has #{@bones} bones"
+	end
+
+	def play_olympics(sport)
+		puts "Athlete won a Silver Metal at #{sport} and can now afford an operation!"
+	end
+	end
+
+	 
 
 stan = Athlete.new
 stan.injure
 stan.take_steroids
+stan.play_olympics("pole vault")
+stan.get_operation
 
 athletes = []
 
-10.times do #it's annoying to read 50 so I tested with 10
+50.times do #it's annoying to read 50 so I tested with 10
 	athlete = Athlete.new
 	athletes << athlete
 end
