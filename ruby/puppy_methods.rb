@@ -34,3 +34,28 @@ ralph.run(7)
 ralph.rollover
 ralph.speak(4)
 ralph.fetch("Giant teddy bear")
+
+
+#NEW CLASS
+class Athlete
+	def initialize
+		@health = 100
+		@bones = "steel"
+		@stamina = 50
+		puts "initializing Athlete with health of #{@health},\nbones of #{@bones}, \nand stamina at #{@stamina}"
+	end
+
+	def injure
+		@health -= 20
+		puts "athlete got injured and now has a health at #{@health}"
+	end
+
+	def take_steroids
+		@stamina += 30
+		puts "athlete took steroids and now has #{@stamina} stamina"
+	end
+end
+
+stan = Athlete.new
+stan.injure
+stan.take_steroids
