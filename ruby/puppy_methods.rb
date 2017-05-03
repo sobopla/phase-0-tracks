@@ -38,6 +38,7 @@ ralph.fetch("Giant teddy bear")
 
 #NEW CLASS
 class Athlete
+	attr_asseccor = @health
 	def initialize
 		@health = 100
 		@bones = "steel"
@@ -68,6 +69,8 @@ class Athlete
 	 
 
 stan = Athlete.new
+p "**** health"
+stan.health
 stan.injure
 stan.take_steroids
 stan.play_olympics("pole vault")
