@@ -59,3 +59,16 @@ end
 stan = Athlete.new
 stan.injure
 stan.take_steroids
+
+athletes = []
+
+10.times do 
+	athlete = Athlete.new
+	athletes << athlete
+end
+p athletes
+
+athletes.each do |instance|
+	instance.injure
+	instance.take_steroids
+end
