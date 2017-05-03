@@ -62,7 +62,7 @@ stan.take_steroids
 
 athletes = []
 
-10.times do 
+10.times do #it's annoying to read 50 so I tested with 10
 	athlete = Athlete.new
 	athletes << athlete
 end
