@@ -42,8 +42,8 @@ class Santa
     def change_gender(identify)
         @gender = identify
 
-        puts "#{name} is changing genders..."
-        puts "#{name} is now #{gender}"
+        puts "#{@name} is changing genders..."
+        puts "#{@name} is now #{@gender}"
     end
 
 end
@@ -58,8 +58,8 @@ exgenders = ["agender", "female", "bigender", "male", "female", "gender fluid", 
 exethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A", "Korean", "Latina", "Parisian"]
 names = ["amy", "ted", "sara", "rach", "ed", "bo", "al", "monica", "alisa", "jeff", "sammy"]
 
-2.times do 
-e = Santa.new(:name => names.sample, :ethnicity => exethnicities.sample, :gender => exgenders.sample)
+10.times do 
+santa = Santa.new(:name => names.sample.upcase, :ethnicity => exethnicities.sample, :gender => exgenders.sample)
 end
 
 
