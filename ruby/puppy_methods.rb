@@ -4,12 +4,12 @@ class Puppy
 		puts "Initializing new puppy instance..."
 	end
 
-  	def fetch(toy)
+  def fetch(toy)
 	    puts "I brought back the #{toy}!"
 	    toy
-  	end
+  end
 
-  	def speak(i)
+  def speak(i)
   		puts "Woof!" * i
 	end
 
@@ -38,13 +38,24 @@ ralph.fetch("Giant teddy bear")
 
 #NEW CLASS
 class Athlete
-	attr_asseccor = @health
+
+	attr_accessor :health
+
+
 	def initialize
 		@health = 100
 		@bones = "steel"
 		@stamina = 50
 		puts "initializing Athlete with health of #{@health},\nbones of #{@bones}, \nand stamina at #{@stamina}"
 	end
+
+	# def health #getter
+ #        @health  # Implicitly returned
+ #  end
+
+ #  def health=(new_health) #setter
+ #        @health = new_health
+ #  end
 
 	def injure
 		@health -= 20
@@ -70,7 +81,9 @@ class Athlete
 
 stan = Athlete.new
 p "**** health"
-stan.health
+p stan.health
+stan.health = 50
+p stan.health
 stan.injure
 stan.take_steroids
 stan.play_olympics("pole vault")
@@ -78,7 +91,7 @@ stan.get_operation
 
 athletes = []
 
-50.times do #it's annoying to read 50 so I tested with 10
+4.times do #it's annoying to read 50 so I tested with 10
 	athlete = Athlete.new
 	athletes << athlete
 end
