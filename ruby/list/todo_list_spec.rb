@@ -2,8 +2,6 @@ require_relative 'todo_list'
 
 describe TodoList do 
   let(:list) {TodoList.new(["apple", "pear"])}
-
-
   
   it "gets items in the list" do
     expect(list.get_items).to eq ["apple", "pear"]
@@ -22,7 +20,6 @@ describe TodoList do
     list.add_item("cheeze")
     list.add_item("beans")
     expect(list.get_item(3)).to eq "beans"
-    
   end
 
 end

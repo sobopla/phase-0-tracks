@@ -1,16 +1,7 @@
-# class Viking
-#     def initialize(attrs) # assume attrs is a hash
-#         @name = attrs[:name]
-#         @age = attrs[:age]
-#         @health = attrs[:health]
-#         @strength = attrs[:strength]
-#     end
-# end
-
-# oleg = Viking.new(:name => "Oleg", :age => 19, :health => 100, :strength => 8)
 class Santa
 	attr_reader :ethnicity, :age 
 	attr_accessor :gender, :reindeer_ranking
+	
 	def initialize(attrs)#I wanted to try instanciation with a hash since I've already done it with a string
 		@gender = attrs[:gender]
 		@name = attrs[:name]
@@ -28,8 +19,6 @@ class Santa
 	def eat_milk_and_cookies(cookie)
 		puts "That was a good #{cookie}"
 	end
-
-	#method to: sample array and turn into a hash key value
 	
 	def celebrate_birthday
 		@age += 1
@@ -42,7 +31,6 @@ class Santa
 
     def change_gender(identify)
         @gender = identify
-
         puts "#{@name} is changing genders..."
         puts "#{@name} is now #{@gender}"
     end
@@ -59,7 +47,7 @@ exgenders = ["agender", "female", "bigender", "male", "female", "gender fluid", 
 exethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A", "Korean", "Latina", "Parisian"]
 names = ["amy", "ted", "sara", "rach", "ed", "bo", "al", "monica", "alisa", "jeff", "sammy"]
 
-10.times do 
+10.times do #method to: sample array and turn into a hash key value
 	santa = Santa.new(:name => names.sample.upcase, :ethnicity => exethnicities.sample, :gender => exgenders.sample)
 	number = Random.new.rand(140) + 1
 	number.times {santa.celebrate_birthday}
