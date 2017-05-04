@@ -31,20 +31,34 @@ class Santa
 	#method to: sample array and turn into a hash key value
 	
 	def celebrate_birthday
+		@age += 1
 	end
-	
+
+	def get_mad_at(reindeer) # take a reindeer's name as an argument,
+        @reindeer_ranking.delete_at(@reindeer_ranking.index(reindeer)) #get index of entered reindeer.
+        @reindeer_ranking << reindeer  # move that reindeer in last place in the reindeer rankings.
+    end
+
+    def change_gender(identify)
+        @gender = identify
+
+        puts "#{name} is changing genders..."
+        puts "#{name} is now #{gender}"
+    end
 
 end
 
 sam = Santa.new(:name =>"Sam", :ethnicity =>"German", :gender => "female")
 sam.speak
 sam.eat_milk_and_cookies("snickerdoodle")
+sam.get_mad_at("Dancer")
+sam.change_gender("Ooloi")
 
 exgenders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A", "demi", "bi", "onkali"]
 exethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A", "Korean", "Latina", "Parisian"]
 names = ["amy", "ted", "sara", "rach", "ed", "bo", "al", "monica", "alisa", "jeff", "sammy"]
 
-20.times do 
+2.times do 
 e = Santa.new(:name => names.sample, :ethnicity => exethnicities.sample, :gender => exgenders.sample)
 end
 
