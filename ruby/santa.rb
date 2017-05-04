@@ -9,7 +9,8 @@
 
 # oleg = Viking.new(:name => "Oleg", :age => 19, :health => 100, :strength => 8)
 class Santa
-
+	attr_reader :ethnicity, :age 
+	attr_accessor :gender, :reindeer_ranking
 	def initialize(attrs)#I wanted to try instanciation with a hash since I've already done it with a string
 		@gender = attrs[:gender]
 		@name = attrs[:name]
@@ -59,7 +60,10 @@ exethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to 
 names = ["amy", "ted", "sara", "rach", "ed", "bo", "al", "monica", "alisa", "jeff", "sammy"]
 
 10.times do 
-santa = Santa.new(:name => names.sample.upcase, :ethnicity => exethnicities.sample, :gender => exgenders.sample)
+	santa = Santa.new(:name => names.sample.upcase, :ethnicity => exethnicities.sample, :gender => exgenders.sample)
+	number = Random.new.rand(140) + 1
+	number.times {santa.celebrate_birthday}
+	puts "This is #{santa.age} years old. "
 end
 
 
