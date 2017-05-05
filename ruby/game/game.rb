@@ -5,7 +5,7 @@ class Game
   attr_reader :is_won, :phrase_board, :display_board
   def initialize(phrase)
     @phrase = phrase.downcase
-    @guessed = []
+    @guessed = [] #same as guessed before
     @is_won = false 
     @phrase_board = []
     @display_board = display_board
@@ -24,6 +24,9 @@ class Game
   def count_letters
     letters_arr = @phrase.split("") - [" "]
     letters_amount =  letters_arr.length
+  end
+
+  def check_letter(letter) 
   end
 
   #def phrase_board_filled = phrase_board.join
