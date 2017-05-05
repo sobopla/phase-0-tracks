@@ -22,7 +22,8 @@ class Game
   end
 
   def count_letters
-    @letters_amount = phrase.split("") - [" "]
+    letters_arr = @phrase.split("") - [" "]
+    letters_amount =  letters_arr.length
   end
 
   #def phrase_board_filled = phrase_board.join
@@ -38,4 +39,4 @@ game.make_board
 p game.make_board
 p game.phrase_board
 p game.make_display_board
-
+p game.count_letters
