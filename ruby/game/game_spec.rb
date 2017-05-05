@@ -13,6 +13,10 @@ describe Game do
   expect(game.make_display_board).to eq "_ _ _ _ _   _ _ _ _ _"
   end
 
+  it "counts letters in the phrase" do 
+  expect(game.count_letters).to eq 10
+  end
+
 
 
 end
