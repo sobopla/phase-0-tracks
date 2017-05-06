@@ -10,7 +10,7 @@ class Game
     @is_won = false 
     @phrase_array = phrase.split("")
     @phrase_board = []
-    @letters_amount = nil #better to use than the method? => phrase.split.join.length
+    @letters_amount = phrase.split.join.length
     @print_phrase_board = @print_phrase_board
     
   end
@@ -24,10 +24,10 @@ class Game
     @display_board = phrase_board.join(" ")
   end
 
-  def count_letters #phrase.split.join.length easier than having this method
-    letters_arr = @phrase.split("") - [" "]
-    @letters_amount =  letters_arr.length
-  end
+  # def count_letters #phrase.split.join.length easier than having this method
+  #   letters_arr = @phrase.split("") - [" "]
+  #   @letters_amount =  letters_arr.length
+  # end
 
   def check_letter(letter) 
     letter = letter.downcase
@@ -113,7 +113,7 @@ game.make_board
   game.process_letter("y")
   game.process_letter("k")
   p game.phrase_board
-  p game.count_letters
+  p game.letters_amount
   p game.guessed
   p game.guessed.length
   p game.is_over

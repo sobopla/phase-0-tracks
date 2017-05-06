@@ -13,10 +13,6 @@ describe Game do
   expect(game.make_display_board).to eq "_ _ _ _ _   _ _ _ _ _"
   end
 
-  it "counts letters in the phrase" do 
-  expect(game.count_letters).to eq 10
-  end
-
   it "gets letters amount(check initialize value)" do  
   expect(game.letters_amount).to eq 10 
   end
@@ -71,7 +67,6 @@ describe Game do
 
   it "checks if the game is over (GAME LOST)" do
   game.make_board
-  game.count_letters
   game.check_letter("p")
   game.process_letter("p")
   
