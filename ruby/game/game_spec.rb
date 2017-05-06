@@ -17,10 +17,14 @@ describe Game do
   expect(game.count_letters).to eq 10
   end
 
-  it "checks letter from user in the phrase" do 
+  it "checks letter from user in the phrase (HAS LETTER)" do 
   game.make_board
   expect(game.check_letter("b")).to be true
   end
 
+  it "checks letter from user in the phrase (LETTER NOT FOUND" do
+  game.make_board
+  expect(game.check_letter("p")).to be false
+  end
 
 end

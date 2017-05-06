@@ -53,6 +53,7 @@ class Game
     else 
       puts "Sorry that letter is not in the phrase, try again"  
       @guessed << letter
+      false
     end
   end
 
