@@ -80,6 +80,6 @@ p game.is_won
 p game.guessed
 p game.phrase
 p game.phrase_array
-p game.check_letter("p")
-p game.process_letter("b")
+p game.check_letter("i")
+p game.process_letter("t")
 
