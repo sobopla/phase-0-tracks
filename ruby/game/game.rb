@@ -24,7 +24,7 @@ class Game
     @display_board = phrase_board.join(" ")
   end
 
-  def count_letters
+  def count_letters #phrase.split.join.length easier than having this method
     letters_arr = @phrase.split("") - [" "]
     @letters_amount =  letters_arr.length
   end
