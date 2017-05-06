@@ -38,4 +38,13 @@ describe Game do
   game.check_letter("t")
   expect(game.process_letter("t")).to eq ["_", "_", "t", "t", "_", " ", "_", "_", "t", "t", "_"]
   end
+  
+  it "adds letters to the storage array" do
+  game.make_board
+  game.check_letter("b")
+  game.check_letter("c")
+  expect(game.guessed).to eq ["b", "c"]
+  end
+
+
 end
