@@ -54,7 +54,7 @@ describe Game do
   expect(game.print_phrase_board).to eq "The board is now:  _ i t t y   _ i t t y" 
   end
 
-  it "checks if the game is over" do
+  it "checks if the game is over (GAME WON)" do
   game.make_board
   game.process_letter("b")
   game.process_letter("i")
@@ -65,6 +65,21 @@ describe Game do
   expect(game.is_over?).to eq true 
   end
 
+  it "checks if the game is over (GAME LOST)" do
+  game.make_board
+  game.process_letter("p")
+  game.process_letter("h")
+  game.process_letter("o")
+  game.process_letter("e")
+  game.process_letter("l")
+  game.process_letter("x")
+  game.process_letter("z")
+  game.process_letter("t")
+  game.process_letter("q")
+  game.process_letter("k")
+  expect(game.is_over?).to eq true
+  
+  end
 
   
 
