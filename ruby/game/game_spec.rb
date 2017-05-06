@@ -27,4 +27,9 @@ describe Game do
   expect(game.check_letter("p")).to be false
   end
 
+  it "puts the correct guessed letter in the phrase board" do
+  game.make_board
+  game.check_letter("b")
+  expect(game.process_letter("b")).to eq ["b", "_", "_", "_", "_", " ", "_", "_", "_", "_", "_"]
+  end
 end

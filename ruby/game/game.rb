@@ -57,9 +57,18 @@ class Game
     end
   end
 
+  def process_letter(letter)
+    letter_index = phrase_array.find_index(letter)
+    phrase_array[letter_index] == ""
+    phrase_board[letter_index] = letter
+    p phrase_board
+    p phrase_array
+    phrase_board 
+  end
+
   #def phrase_board_filled = phrase_board.join
 
-end
+end ###end of class
 
 game = Game.new("bitty kitty")
 game.make_board
@@ -72,4 +81,5 @@ p game.guessed
 p game.phrase
 p game.phrase_array
 p game.check_letter("p")
+p game.process_letter("b")
 
