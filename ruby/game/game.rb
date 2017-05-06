@@ -59,8 +59,14 @@ class Game
 
   def process_letter(letter)
     letter_index = phrase_array.find_index(letter)
-    phrase_array[letter_index] == ""
-    phrase_board[letter_index] = letter
+    phrase_board.each_with_index do |char, index|
+      if phrase_array[index] == letter
+         phrase_board[index] = letter
+      end
+    end
+    # doesn't process double letters or more:
+    # phrase_array[letter_index] == ""
+    # phrase_board[letter_index] = letter
     p phrase_board
     p phrase_array
     phrase_board 
