@@ -1,12 +1,12 @@
 
 
 class Game
-
+  attr_accessor :phrase_board
   attr_reader :is_won, :phrase_board, :guessed, :phrase_array #:phrase  #remove phrase later?
   attr_writer :phrase_array, :print_phrase_board
   def initialize(phrase)
     @phrase = phrase.downcase
-    @guessed = [] #same as guessed before
+    @guessed = [] 
     @is_won = false 
     @phrase_array = phrase.split("")
     @phrase_board = []
@@ -31,19 +31,19 @@ class Game
 
   def check_letter(letter) 
     letter = letter.downcase
-    #find double letters
+    
     if phrase_array.include?(letter)
       @guessed << letter
       puts "Correct!" # " The display is now #{phrase_board.join(" ")}"
-      true
-      #p @guessed #checking 
-    elsif @guessed.include?(letter)
+      true 
+    elsif @guessed.include?(letter) #find double letters
       @guessed.delete_if{|char| char == letter}
       @guessed << letter
       puts "You already guessed that letter but it will not count as a guess"
     else 
       puts "Sorry that letter is not in the phrase, try again"  
       @guessed << letter
+      #self.is_over?
       false
     end
   end
@@ -59,42 +59,62 @@ class Game
     # phrase_array[letter_index] == ""
     # phrase_board[letter_index] = letter
     p phrase_board
-    #p phrase_array
-    
+    #p phrase_array 
   end
 
   def print_phrase_board
     display = @phrase_board.join(" ")
     p "The board is now:  #{display}"
-    #{@display}"
-    
   end
+
+  def is_over?
+    
+    if !(@phrase_board.include? "_")
+        @is_won = true
+        puts "YOU WON!"
+        return true  
+    end
+    if @guessed.length == @letters_amount && @phrase_board.include?("_")
+        @is_won = false
+        puts "YOU'RE A LOSER"
+        true
+    end
+    if 
+      false
+    end
+ 
+  end
+
   #def phrase_board_filled = phrase_board.join
 
 end ###end of class
-
+#
 game = Game.new("bitty kitty")
 game.make_board
-p game.make_board
-p game.phrase_board
-p "----make_display_board"
-p game.make_display_board
-p "----------------------"
-p game.count_letters
-p game.is_won
-p game.guessed
-#p game.phrase
-p game.phrase_array
-p game.check_letter("b")
-p game.check_letter("c")
-p game.guessed
-p game.process_letter("t")
+# p game.make_board
+# p game.phrase_board
+# p "----make_display_board"
+# p game.make_display_board
+# p "----------------------"
+# p game.count_letters
+# p game.is_won
+# p game.guessed
+# #p game.phrase
+# p game.phrase_array
+# p game.check_letter("b")
+# p game.check_letter("c")
+# p game.guessed
+ p game.process_letter("b")
 p game.process_letter("i")
+p game.process_letter("t")
+p game.process_letter("k")
 p game.process_letter("y")
+p game.phrase_board 
 
 
-p game.print_phrase_board
-p "------------"
+# puts game.print_phrase_board
+# p "------------"
+# p game.phrase_board
 
 #p game.display_board
 

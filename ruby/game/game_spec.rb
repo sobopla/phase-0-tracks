@@ -54,4 +54,18 @@ describe Game do
   expect(game.print_phrase_board).to eq "The board is now:  _ i t t y   _ i t t y" 
   end
 
+  it "checks if the game is over" do
+  game.make_board
+  game.process_letter("b")
+  game.process_letter("i")
+  game.process_letter("t")
+  game.process_letter("y")
+  game.process_letter("k")
+  p game.phrase_board
+  expect(game.is_over?).to eq true 
+  end
+
+
+  
+
 end
