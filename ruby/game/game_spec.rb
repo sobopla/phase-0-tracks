@@ -97,7 +97,13 @@ describe Game do
   game.check_letter("k")
   game.process_letter("k")
   expect(game.is_over).to eq true
-  
+  end
+
+  it "doesn't count already guessed letters" do 
+  game.make_board
+  game.check_letter("b")
+  game.process_letter("b")
+  expect(game.check_letter("b")).to eq "The board is now:  b _ _ _ _ _ _ _ _ _"
   end
 
   

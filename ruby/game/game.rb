@@ -62,9 +62,9 @@ class Game
     #p phrase_array 
   end
 
-  def print_phrase_board
+  def print_phrase_board #do I need to rspec this? It looks better puts not p'd / but I can't pass in rspec with puts because puts returns nil
     display = @phrase_board.join(" ")
-    p "The board is now:  #{display}"
+    puts "Here is the board:  #{display}"
   end
 
   def is_over
@@ -88,9 +88,29 @@ class Game
   #def phrase_board_filled = phrase_board.join
 
 end ###end of class
+
+# puts "User 1 , enter a phrase for user 2 to guess"
+# phrase = gets.chomp
+# game = Game.new(phrase)
+# game.make_board
+# game.print_phrase_board
+# p game.letters_amount
+# p game.guessed.count
+# p game.guessed.length
+# x = game.guessed.count
+# while x < @letters_amount
+#   puts "Guess a letter"
+#   letter = gets.chomp.downcase
+#   game.check_letter(letter)
+#   p game.guessed
+#   p game.letters.amount
+#   game.process_letter(letter)
+#   game.print_phrase_board
+#   game.letters_amount
+# end
 #
-game = Game.new("bitty kitty")
-game.make_board
+#game = Game.new("bitty kitty")
+#game.make_board
 # p game.make_board
 # p game.phrase_board
 # p "----make_display_board"
@@ -107,17 +127,17 @@ game.make_board
 # 
 # ------------TO WIN
 
-  game.process_letter("b")
-  game.process_letter("i")
-  game.process_letter("t")
-  game.process_letter("y")
-  game.process_letter("k")
-  p game.phrase_board
-  p game.letters_amount
-  p game.guessed
-  p game.guessed.length
-  p game.is_over
-  p game.letters_amount
+  # game.process_letter("b")
+  # game.process_letter("i")
+  # game.process_letter("t")
+  # game.process_letter("y")
+  # game.process_letter("k")
+  # p game.phrase_board
+  # p game.letters_amount
+  # p game.guessed
+  # p game.guessed.length
+  # p game.is_over
+  # p game.letters_amount
 #---------TO LOSE
 # game.check_letter("p")
 #   game.process_letter("p")
