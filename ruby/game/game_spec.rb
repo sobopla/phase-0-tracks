@@ -18,7 +18,8 @@ describe Game do
   end
 
   it "checks letter from user in the phrase" do 
-  expect(game.check_letter(b)).to be true
+  game.make_board
+  expect(game.check_letter("b")).to be true
   end
 
 
