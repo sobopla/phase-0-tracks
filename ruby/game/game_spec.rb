@@ -17,15 +17,16 @@ describe Game do
   expect(game.letters_amount).to eq 10 
   end
 
-  it "checks letter from user in the phrase (HAS LETTER)" do 
-  game.make_board
-  expect(game.check_letter("b")).to be true
-  end
+  # DONT NEED THESE CHECKS
+  # it "checks letter from user in the phrase (HAS LETTER)" do 
+  # game.make_board
+  # expect(game.check_letter("b")).to be true
+  # end
 
-  it "checks letter from user in the phrase (LETTER NOT FOUND" do
-  game.make_board
-  expect(game.check_letter("p")).to be false
-  end
+  # it "checks letter from user in the phrase (LETTER NOT FOUND" do
+  # game.make_board
+  # expect(game.check_letter("p")).to be false
+  # end
 
   it "processes the correct guessed letter into the phrase board" do
   game.make_board
@@ -48,10 +49,11 @@ describe Game do
 
   it "prints the board with the correct letters guessed filled"do
   game.make_board
+  game.check_letter("t")
   game.process_letter("t")
+  game.check_letter("i")
   game.process_letter("i")
-  game.process_letter("y")
-  expect(game.print_phrase_board).to eq "The board is now:  _ i t t y   _ i t t y" 
+  expect(game.print_phrase_board).to eq "Here is the board:  _ i t t _   _ i t t _" 
   end
 
   it "checks if the game is over (GAME WON)" do
@@ -103,9 +105,13 @@ describe Game do
   game.make_board
   game.check_letter("b")
   game.process_letter("b")
-  expect(game.check_letter("b")).to eq "The board is now:  b _ _ _ _ _ _ _ _ _"
+  expect(game.check_letter("b")).to eq "You already guessed that letter but it will not count as a guess"
   end
 
+  it "tells when a letter is not correct" do
+  game.make_board
+  expect(game.check_letter("o")).to eq "Sorry that letter is not in the phrase, try again"
+  end
   
 
 end

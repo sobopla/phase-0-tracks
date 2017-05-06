@@ -32,19 +32,19 @@ class Game
   def check_letter(letter) 
     letter = letter.downcase
     
-    if phrase_array.include?(letter)
+    if phrase_array.include?(letter) && !@guessed.include?(letter)
       @guessed << letter
-      puts "Correct!" # " The display is now #{phrase_board.join(" ")}"
-      true 
+      p "Correct!" # " The display is now #{phrase_board.join(" ")}"
+      # true 
     elsif @guessed.include?(letter) #find double letters
       @guessed.delete_if{|char| char == letter}
       @guessed << letter
-      puts "You already guessed that letter but it will not count as a guess"
+      p "You already guessed that letter but it will not count as a guess"
     else 
-      puts "Sorry that letter is not in the phrase, try again"  
       @guessed << letter
+      p "Sorry that letter is not in the phrase, try again"  
       #self.is_over?
-      false
+      # false
     end
   end
 
@@ -64,7 +64,7 @@ class Game
 
   def print_phrase_board #do I need to rspec this? It looks better puts not p'd / but I can't pass in rspec with puts because puts returns nil
     display = @phrase_board.join(" ")
-    puts "Here is the board:  #{display}"
+    p "Here is the board:  #{display}"
   end
 
   def is_over
@@ -109,8 +109,12 @@ end ###end of class
 #   game.letters_amount
 # end
 #
-#game = Game.new("bitty kitty")
-#game.make_board
+game = Game.new("bitty kitty")
+game.make_board
+  game.check_letter("b")
+  game.process_letter("b")
+  game.check_letter("o")
+  
 # p game.make_board
 # p game.phrase_board
 # p "----make_display_board"
