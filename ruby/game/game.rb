@@ -10,7 +10,7 @@ class Game
     @is_won = false 
     @phrase_array = phrase.split("")
     @phrase_board = []
-    @letters_amount = nil
+    @letters_amount = nil #better to use than the method? => phrase.split.join.length
     @print_phrase_board = @print_phrase_board
     
   end
@@ -104,68 +104,60 @@ game.make_board
 # p game.check_letter("b")
 # p game.check_letter("c")
 # p game.guessed
-#---------
-game.check_letter("p")
-  game.process_letter("p")
-  
-  game.check_letter("h")
-  game.process_letter("h")
-  
-  game.check_letter("o")
-  game.process_letter("o")
-  
-  game.check_letter("e")
-  game.process_letter("e")
-  
-  game.check_letter("l")
-  game.process_letter("l")
-  
-  game.check_letter("x")
-  game.process_letter("x")
-  
-  game.check_letter("z")
-  game.process_letter("z")
-  
-  game.check_letter("t")
+# 
+# ------------TO WIN
+
+  game.process_letter("b")
+  game.process_letter("i")
   game.process_letter("t")
-  
-  game.check_letter("q")
-  game.process_letter("q")
-  
-  game.check_letter("k")
+  game.process_letter("y")
   game.process_letter("k")
+  p game.phrase_board
   p game.count_letters
   p game.guessed
   p game.guessed.length
   p game.is_over
   p game.letters_amount
-
-
-
-
-
-
-#----------
-# game.process_letter("p")
+#---------TO LOSE
+# game.check_letter("p")
+#   game.process_letter("p")
+  
+#   game.check_letter("h")
 #   game.process_letter("h")
-# p game.guessed
+  
+#   game.check_letter("o")
 #   game.process_letter("o")
+  
+#   game.check_letter("e")
 #   game.process_letter("e")
+  
+#   game.check_letter("l")
 #   game.process_letter("l")
+  
+#   game.check_letter("x")
 #   game.process_letter("x")
+  
+#   game.check_letter("z")
 #   game.process_letter("z")
+  
+#   game.check_letter("t")
 #   game.process_letter("t")
+  
+#   game.check_letter("q")
 #   game.process_letter("q")
+  
+#   game.check_letter("k")
 #   game.process_letter("k")
-# p game.print_phrase_board
-# p game.phrase_board 
-# p game.guessed
-# p game.guessed.length
+#   p game.count_letters
+#   p game.guessed
+#   p game.guessed.length
+#   p game.is_over
+#   p game.letters_amount
 
 
-# puts game.print_phrase_board
-# p "------------"
-# p game.phrase_board
 
-#p game.display_board
+
+
+
+
 
