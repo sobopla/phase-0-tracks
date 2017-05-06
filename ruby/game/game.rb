@@ -1,8 +1,8 @@
 
 
 class Game
-  attr_accessor :phrase_board
-  attr_reader :is_won, :phrase_board, :guessed, :phrase_array #:phrase  #remove phrase later?
+  attr_accessor :phrase_board, :is_over
+  attr_reader :is_won, :phrase_board, :guessed, :phrase_array, :letters_amount  #:phrase  #remove phrase later?
   attr_writer :phrase_array, :print_phrase_board
   def initialize(phrase)
     @phrase = phrase.downcase
@@ -26,7 +26,7 @@ class Game
 
   def count_letters
     letters_arr = @phrase.split("") - [" "]
-    letters_amount =  letters_arr.length
+    @letters_amount =  letters_arr.length
   end
 
   def check_letter(letter) 
@@ -67,7 +67,7 @@ class Game
     p "The board is now:  #{display}"
   end
 
-  def is_over?
+  def is_over
     
     if !(@phrase_board.include? "_")
         @is_won = true
@@ -77,7 +77,7 @@ class Game
     if @guessed.length == @letters_amount && @phrase_board.include?("_")
         @is_won = false
         puts "YOU'RE A LOSER"
-        true
+        return true
     end
     if 
       false
@@ -104,12 +104,63 @@ game.make_board
 # p game.check_letter("b")
 # p game.check_letter("c")
 # p game.guessed
- p game.process_letter("b")
-p game.process_letter("i")
-p game.process_letter("t")
-p game.process_letter("k")
-p game.process_letter("y")
-p game.phrase_board 
+#---------
+game.check_letter("p")
+  game.process_letter("p")
+  
+  game.check_letter("h")
+  game.process_letter("h")
+  
+  game.check_letter("o")
+  game.process_letter("o")
+  
+  game.check_letter("e")
+  game.process_letter("e")
+  
+  game.check_letter("l")
+  game.process_letter("l")
+  
+  game.check_letter("x")
+  game.process_letter("x")
+  
+  game.check_letter("z")
+  game.process_letter("z")
+  
+  game.check_letter("t")
+  game.process_letter("t")
+  
+  game.check_letter("q")
+  game.process_letter("q")
+  
+  game.check_letter("k")
+  game.process_letter("k")
+  p game.count_letters
+  p game.guessed
+  p game.guessed.length
+  p game.is_over
+  p game.letters_amount
+
+
+
+
+
+
+#----------
+# game.process_letter("p")
+#   game.process_letter("h")
+# p game.guessed
+#   game.process_letter("o")
+#   game.process_letter("e")
+#   game.process_letter("l")
+#   game.process_letter("x")
+#   game.process_letter("z")
+#   game.process_letter("t")
+#   game.process_letter("q")
+#   game.process_letter("k")
+# p game.print_phrase_board
+# p game.phrase_board 
+# p game.guessed
+# p game.guessed.length
 
 
 # puts game.print_phrase_board

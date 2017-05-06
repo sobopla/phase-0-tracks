@@ -17,6 +17,11 @@ describe Game do
   expect(game.count_letters).to eq 10
   end
 
+  it "sets letters amount" do  
+  game.count_letters
+  expect(game.letters_amount).to eq 10 
+  end
+
   it "checks letter from user in the phrase (HAS LETTER)" do 
   game.make_board
   expect(game.check_letter("b")).to be true
@@ -67,15 +72,34 @@ describe Game do
 
   it "checks if the game is over (GAME LOST)" do
   game.make_board
+  game.check_letter("p")
   game.process_letter("p")
+  
+  game.check_letter("h")
   game.process_letter("h")
+  
+  game.check_letter("o")
   game.process_letter("o")
+  
+  game.check_letter("e")
   game.process_letter("e")
+  
+  game.check_letter("l")
   game.process_letter("l")
+  
+  game.check_letter("x")
   game.process_letter("x")
+  
+  game.check_letter("z")
   game.process_letter("z")
+  
+  game.check_letter("t")
   game.process_letter("t")
+  
+  game.check_letter("q")
   game.process_letter("q")
+  
+  game.check_letter("k")
   game.process_letter("k")
   expect(game.is_over?).to eq true
   
