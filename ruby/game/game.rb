@@ -68,10 +68,16 @@ class Game
     # phrase_array[letter_index] == ""
     # phrase_board[letter_index] = letter
     p phrase_board
-    p phrase_array
-    phrase_board 
+    #p phrase_array
+    
   end
 
+  def print_phrase_board
+    @display = phrase_board.join(" ")
+    puts "The board is now:"
+    #{@display}"
+p    @display
+  end
   #def phrase_board_filled = phrase_board.join
 
 end ###end of class
@@ -89,4 +95,6 @@ p game.phrase_array
 p game.check_letter("b")
 p game.check_letter("c")
 p game.guessed
+p game.process_letter("t")
+p game.print_phrase_board
 
