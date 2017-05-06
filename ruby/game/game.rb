@@ -2,16 +2,16 @@
 
 class Game
 
-  attr_reader :is_won, :phrase_board, :display_board, :guessed, :phrase_array, :phrase #remove phrase later
-  attr_writer :phrase_array
+  attr_reader :is_won, :phrase_board, :guessed, :phrase_array, :phrase  #remove phrase later?
+  attr_writer :phrase_array, :print_phrase_board
   def initialize(phrase)
     @phrase = phrase.downcase
     @guessed = [] #same as guessed before
     @is_won = false 
     @phrase_array = phrase.split("")
     @phrase_board = []
-    @display_board = display_board
     @letters_amount = nil
+    @print_phrase_board = @print_phrase_board
     
   end
 
@@ -33,16 +33,7 @@ class Game
     letter = letter.downcase
     #find double letters
     if phrase_array.include?(letter)
-      # letter_index = phrase_array.find_index(letter)
-
-      # phrase_board.each_with_index do |char, index|
-      #   if phrase_array[index] == letter
-      #      phrase_board[index] = letter
       @guessed << letter
-      #   end
-      # end
-      # phrase_array[letter_index] = ""
-      # phrase_board[letter_index] = letter
       puts "Correct!" # " The display is now #{phrase_board.join(" ")}"
       true
       #p @guessed #checking 
@@ -73,10 +64,10 @@ class Game
   end
 
   def print_phrase_board
-    @display = phrase_board.join(" ")
-    puts "The board is now:"
+    display = @phrase_board.join(" ")
+    p "The board is now:  #{display}"
     #{@display}"
-p    @display
+    
   end
   #def phrase_board_filled = phrase_board.join
 
@@ -86,7 +77,9 @@ game = Game.new("bitty kitty")
 game.make_board
 p game.make_board
 p game.phrase_board
+p "----make_display_board"
 p game.make_display_board
+p "----------------------"
 p game.count_letters
 p game.is_won
 p game.guessed
@@ -96,5 +89,12 @@ p game.check_letter("b")
 p game.check_letter("c")
 p game.guessed
 p game.process_letter("t")
+p game.process_letter("i")
+p game.process_letter("y")
+
+
 p game.print_phrase_board
+p "------------"
+
+#p game.display_board
 

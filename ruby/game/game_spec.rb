@@ -46,5 +46,13 @@ describe Game do
   expect(game.guessed).to eq ["b", "c"]
   end
 
+  it "prints the board with the correct letters guessed filled"do
+  game.make_board
+  game.process_letter("t")
+  game.process_letter("i")
+  game.process_letter("y")
+  expect(game.print_prase_board).to eq "The board is now:  _ i t t y   _ i t t y"
+
+  end
 
 end
