@@ -51,8 +51,7 @@ describe Game do
   game.process_letter("t")
   game.process_letter("i")
   game.process_letter("y")
-  expect(game.print_prase_board).to eq "The board is now:  _ i t t y   _ i t t y"
-
+  expect(game.print_phrase_board).to eq "The board is now:  _ i t t y   _ i t t y" 
   end
 
 end
