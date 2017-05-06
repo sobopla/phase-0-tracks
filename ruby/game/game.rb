@@ -46,9 +46,14 @@ class Game
       puts "Correct!" # " The display is now #{phrase_board.join(" ")}"
       true
       #p @guessed #checking 
+    elsif @guessed.include?(letter)
+      @guessed.delete_if{|char| char == letter}
+      @guessed << letter
+      puts "You already guessed that letter but it will not count as a guess"
+    else 
+      puts "Sorry that letter is not in the phrase, try again"  
+      @guessed << letter
     end
-    
-          
   end
 
   #def phrase_board_filled = phrase_board.join
@@ -65,5 +70,5 @@ p game.is_won
 p game.guessed
 p game.phrase
 p game.phrase_array
-p game.check_letter("i")
+p game.check_letter("p")
 
