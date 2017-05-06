@@ -67,11 +67,12 @@ describe Game do
   game.process_letter("y")
   game.process_letter("k")
   p game.phrase_board
-  expect(game.is_over?).to eq true 
+  expect(game.is_over).to eq true 
   end
 
   it "checks if the game is over (GAME LOST)" do
   game.make_board
+  game.count_letters
   game.check_letter("p")
   game.process_letter("p")
   
@@ -101,7 +102,7 @@ describe Game do
   
   game.check_letter("k")
   game.process_letter("k")
-  expect(game.is_over?).to eq true
+  expect(game.is_over).to eq true
   
   end
 
