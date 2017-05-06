@@ -2,7 +2,7 @@
 
 class Game
 
-  attr_reader :is_won, :phrase_board, :guessed, :phrase_array, :phrase  #remove phrase later?
+  attr_reader :is_won, :phrase_board, :guessed, :phrase_array #:phrase  #remove phrase later?
   attr_writer :phrase_array, :print_phrase_board
   def initialize(phrase)
     @phrase = phrase.downcase
@@ -83,7 +83,7 @@ p "----------------------"
 p game.count_letters
 p game.is_won
 p game.guessed
-p game.phrase
+#p game.phrase
 p game.phrase_array
 p game.check_letter("b")
 p game.check_letter("c")
