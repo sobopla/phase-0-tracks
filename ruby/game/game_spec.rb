@@ -17,8 +17,7 @@ describe Game do
   expect(game.count_letters).to eq 10
   end
 
-  it "sets letters amount" do  
-  game.count_letters
+  it "gets letters amount(check initialize value)" do  
   expect(game.letters_amount).to eq 10 
   end
 
