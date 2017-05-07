@@ -19,30 +19,18 @@ class Game
     @phrase_board = @phrase.gsub(/[a-zA-Z"]/, "_") .split("") #.join(" ") will be for ui
   end
 
-  # def make_display_board
-  #   @display_board = phrase_board.join(" ")
-  # end
-
-  # def count_letters #phrase.split.join easier than having this method
-  #   letters_arr = @phrase.split("") - [" "]
-  #   @letters_amount =  letters_arr.length
-  # end
-
   def check_letter(letter) #refactor position of repeated guessed letter
     letter = letter.downcase
     
     if @phrase_array.include?(letter) && !@guessed.include?(letter)
-      #@guessed << letter
       p "Correct!" 
     elsif @guessed.include?(letter) #find double letters
       @guessed.delete_if{|char| char == letter}
-      #@guessed << letter
       p "You already guessed that letter but it will not count as a guess"
     else 
-      #@guessed << letter
       p "Sorry that letter is not in the phrase"  
     end
-      @guessed << letter 
+    @guessed << letter 
   end
 
   def process_letter(letter)
@@ -53,16 +41,14 @@ class Game
      end
    end
    print_phrase_board 
-  end
+ end
 
   def print_phrase_board #do I need to rspec this? It looks better puts not p'd / but I can't pass in rspec with puts because puts returns nil
     display = @phrase_board.join(" ")
-
     p "Here is the board:  #{display}"
   end
 
   def is_over
-
     if @guessed.length == @letters_amount && @phrase_board.include?("_")
       @is_won = false
       puts "YOU'RE A LOSER the phrase was: #{@phrase}" # ADD COLON
@@ -77,19 +63,16 @@ class Game
 
   end
 
-end ###end of class
+end # end of class
 
 puts "User 1 , enter a phrase for user 2 to guess"
 phrase = gets.chomp
 game = Game.new(phrase)
 game.make_board
 game.print_phrase_board
-#game.guessed.count < game.letters_amount
 until game.is_over  do
-  #break if game.is_over == true
   puts "Guess a letter"
   letter = gets.chomp.downcase
   game.check_letter(letter)
   game.process_letter(letter)
-  #game.is_over - until loop is already running is_over at the end
 end
