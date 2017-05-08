@@ -20,6 +20,7 @@ module Shout
   def shout(song)
     puts '```' + song.upcase + '```'
   end
+end
 
 class Sixties_Songs # 2. Write two classes representing anything that might shout, and include the Shout module in those classes.
   include Shout
