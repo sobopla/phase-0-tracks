@@ -19,27 +19,34 @@ class VirusPredictor
 
   # method calling predicted deaths method and speed_of_spread metod
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths
+    speed_of_spread
   end
 
   private
 
   # method takes 3 parameters and is private
-  def predicted_deaths(population_density, population, state)
+  def predicted_deaths
     # predicted deaths is solely based on population density
     # the if else seems to say the larger the density the higher the deaths and rounding down
+  
+  
+    death_percentage = 0
+
+    #getting the death_percentage rate for the density
     if @population_density >= 200
-      number_of_deaths = (@population * 0.4).floor
+      death_percentage = 0.4
     elsif @population_density >= 150
-      number_of_deaths = (@population * 0.3).floor
+      death_percentage = 0.3
     elsif @population_density >= 100
-      number_of_deaths = (@population * 0.2).floor
+      death_percentage = 0.2
     elsif @population_density >= 50
-      number_of_deaths = (@population * 0.1).floor
+      death_percentage = 0.1
     else
-      number_of_deaths = (@population * 0.05).floor
+      death_percentage = 0.05
     end
+
+    number_of_deaths = (@population * death_percentage).floor
 
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
@@ -48,21 +55,21 @@ class VirusPredictor
   # speed is setting the number of months as the speed at 0
   # why is the speed slower when the population density is higher??
   # change it to months
-  def speed_of_spread(population_density, state) #in months
+  def speed_of_spread #in months #doesn't need arguments
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     months = 0.0
 
     if @population_density >= 200
-      months += 0.5
+      months = 0.5
     elsif @population_density >= 150
-      months += 1
+      months = 1
     elsif @population_density >= 100
-      months += 1.5
+      months = 1.5
     elsif @population_density >= 50
-      months += 2
+      months = 2
     else
-      months += 2.5
+      months = 2.5
     end
 
     puts " and will spread across the state in #{months} months.\n\n"
@@ -96,6 +103,7 @@ STATE_DATA.each do |state, state_info|
   report = VirusPredictor.new(state, state_info[:population_density], state_info[:population] )
   report.virus_effects
 end
+
 
 
 
