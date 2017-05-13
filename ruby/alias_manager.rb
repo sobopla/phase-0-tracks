@@ -27,7 +27,7 @@ def convert(name)
   vowels = ["a", "e", "i", "o", "u"]
   consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
   n = name.length 
- 
+
   reversed = reverse(name)
   
   
@@ -43,29 +43,27 @@ def convert(name)
     else char = char
     end
   end
-           
+
   reversed.join('')
   
 end 
 
  # DRIVER 
  loop do 
-         puts "What is the spy's name?"
+   puts "What is the spy's name?"
          name = gets.chomp.downcase # deal with capitals
          break if name == "quit" || name == "done"
-          
+
          aka = convert(name) # Perform alias-making method on given name.
-        
-        cap(aka)
+
+         cap(aka)
          #hash for names
-           name_info = {"Real_name" => [cap(name)], "Alias" => [cap(aka)]}
-           
+         name_info = {"Real_name" => [cap(name)], "Alias" => [cap(aka)]}
+
         # puts "The Alias for #{name_info["Real_name"]} is  #{name_info['Alias']}"
-         puts 'The real name of the spy is: '
-         puts name_info["Real_name"] 
-         puts "The alias of the spy is: #{cap(aka)}"
-         p name_info 
-         
-       end
+        puts 'The real name of the spy is: '
+        puts name_info["Real_name"] 
+        puts "The alias of the spy is: #{cap(aka)}"
+        p name_info 
+  end
          #iterate over hash to print out key and values
-      
