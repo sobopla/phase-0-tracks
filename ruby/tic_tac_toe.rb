@@ -11,6 +11,8 @@ class Tictac
     # @display_board = [ [1, 2, 3],[4, 5, 6],[7, 8, 9] ]
     @moves = 0
     @player = @player1
+    @player1_moves = []
+    @player2_moves = {m1: 2, m2: 5, m3: 8}
   end
 
   def print_board
@@ -31,11 +33,13 @@ class Tictac
     open
   end
 
-  def switch_player
-    if @player == @player1 
+  def switch_player(num)
+    if @player == @player1
+      @player1_moves << num
       @player = @player2
       puts "switching to player 2 ..."
     else 
+      @player2_moves << num
       @player = @player1
       puts "switching to player 1 ..."
     end
@@ -54,9 +58,9 @@ class Tictac
     end
   end
 
-  def is_won?(num)
-     case win 
-     when player is found at all three 
+  # def is_won?(num)
+  #    case win 
+  #    when player is found at all three 
     # have a comparison board
     #check based on number? each number has 3 winning scenarios
     #change array to hash? row:1 => [xxx]
@@ -71,7 +75,7 @@ puts "Here is the board:"
 t.print_board
 puts "Player 1 what number do you want to move to?"
 num = gets.chomp.to_i
-@moves << num
+#@player1_moves << num
 
 t.process(num)
 t.print_board
@@ -93,16 +97,20 @@ t.print_board
 # WIN CONDITIONS: 
 # when 1,2,3  ||  1,4,7  ||  2,5,8  ||  3, 6, 9 ||
 # when 4,5,6  ||  7,8,9   || 1,5,9  ||  3, 5, 7  
-  if player 1
-    if num  
-    if ( board[0] && board[1] && board[2]) == "O" ||
-     == "O" ||
-    win = true
-  end
-  if board
+#   if player 1
+#     if num  
+#     if ( board[0] && board[1] && board[2]) == "O" ||
+#      == "O" ||
+#     win = true
+#   end
+#   if board
 
 
 
+# @win1 = [1, 2, 3]
+# @win2 = [4, 5, 6]
+
+# (@win1 || @win 2) == ["O", "O", "O"]
 # WIN CONDITIONS: 
 # when 1,2,3  ||  1,4,7  ||  2,5,8  ||  3, 6, 9 ||
 # when 4,5,6  ||  7,8,9   || 1,5,9  ||  3, 5, 7  
