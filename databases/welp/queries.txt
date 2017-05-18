@@ -1,0 +1,77 @@
+1. You've joined two tables before. How do you join three?
+
+sqlite> SELECT * FROM reviews INNER JOIN users on reviews.user_id = users.id INNER JOIN businesses on reviews.business_id = businesses.id;
+1|4|excellent food|6|1|1|Bradford|Pitt|6|Sushi World
+2|5|Great wedding venue|1|2|2|Mandy|Kaling|1|Grundy Hollow Wedding Chapel
+3|3|not good service|2|2|2|Mandy|Kaling|2|Amir's Towing
+4|2|seedy club|3|1|1|Bradford|Pitt|3|The Beagle Nightclub
+5|1|terrible plumbing|5|3|3|Angela|Jolie|5|Plumbing by Janet
+
+
+2.There are some repetitive columns if we choose to view all fields. Choose instead to just view the user's names, the business name, the star rating, and the comment.
+
+# THIS WORKS:
+SELECT stars, comment, first_name, last_name, name FROM reviews INNER JOIN users on reviews.user_id = users.id INNER JOIN businesses on reviews.business_id = businesses.id;
+4|excellent food|Bradford|Pitt|Sushi World
+5|Great wedding venue|Mandy|Kaling|Grundy Hollow Wedding Chapel
+3|not good service|Mandy|Kaling|Amir's Towing
+2|seedy club|Bradford|Pitt|The Beagle Nightclub
+1|terrible plumbing|Angela|Jolie|Plumbing by Janet
+sqlite> 
+
+# DOESN'T WORK BELOW SHOWS WITHOUT reviews.businesses_id = businesses.id
+sqlite> SELECT stars, comment, first_name, last_name, name FROM reviews INNER JOIN users on reviews.user_id = users.id INNER JOIN businesses on reviews.business_id; 
+4|excellent food|Bradford|Pitt|Grundy Hollow Wedding Chapel
+4|excellent food|Bradford|Pitt|Amir's Towing
+4|excellent food|Bradford|Pitt|The Beagle Nightclub
+4|excellent food|Bradford|Pitt|Lotus Yoga
+4|excellent food|Bradford|Pitt|Plumbing by Janet
+4|excellent food|Bradford|Pitt|Sushi World
+4|excellent food|Bradford|Pitt|JoeBob's Sportz Barn
+5|Great wedding venue|Mandy|Kaling|Grundy Hollow Wedding Chapel
+5|Great wedding venue|Mandy|Kaling|Amir's Towing
+5|Great wedding venue|Mandy|Kaling|The Beagle Nightclub
+5|Great wedding venue|Mandy|Kaling|Lotus Yoga
+5|Great wedding venue|Mandy|Kaling|Plumbing by Janet
+5|Great wedding venue|Mandy|Kaling|Sushi World
+5|Great wedding venue|Mandy|Kaling|JoeBob's Sportz Barn
+3|not good service|Mandy|Kaling|Grundy Hollow Wedding Chapel
+3|not good service|Mandy|Kaling|Amir's Towing
+3|not good service|Mandy|Kaling|The Beagle Nightclub
+3|not good service|Mandy|Kaling|Lotus Yoga
+3|not good service|Mandy|Kaling|Plumbing by Janet
+3|not good service|Mandy|Kaling|Sushi World
+3|not good service|Mandy|Kaling|JoeBob's Sportz Barn
+2|seedy club|Bradford|Pitt|Grundy Hollow Wedding Chapel
+2|seedy club|Bradford|Pitt|Amir's Towing
+2|seedy club|Bradford|Pitt|The Beagle Nightclub
+2|seedy club|Bradford|Pitt|Lotus Yoga
+2|seedy club|Bradford|Pitt|Plumbing by Janet
+2|seedy club|Bradford|Pitt|Sushi World
+2|seedy club|Bradford|Pitt|JoeBob's Sportz Barn
+1|terrible plumbing|Angela|Jolie|Grundy Hollow Wedding Chapel
+1|terrible plumbing|Angela|Jolie|Amir's Towing
+1|terrible plumbing|Angela|Jolie|The Beagle Nightclub
+1|terrible plumbing|Angela|Jolie|Lotus Yoga
+1|terrible plumbing|Angela|Jolie|Plumbing by Janet
+1|terrible plumbing|Angela|Jolie|Sushi World
+1|terrible plumbing|Angela|Jolie|JoeBob's Sportz Barn
+Error: near "=": syntax error
+sqlite> 
+
+
+3. How do you view the data of all three tables for just one particular business? 
+
+
+
+# ONE PARTICULAR BUSINESS:
+STILL NEED TO JOIN TOGETHER , 
+
+sqlite> SELECT stars, comment, first_name, last_name, name FROM reviews INNER JOIN users on reviews.user_id = users.id INNER JOIN businesses on reviews.business_id = businesses.id WHERE businesses.name = "Sushi World";
+4|excellent food|Bradford|Pitt|Sushi World
+sqlite> 
+
+
+
+
+
