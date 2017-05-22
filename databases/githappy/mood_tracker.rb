@@ -35,12 +35,12 @@ CREATE TABLE IF NOT EXISTS moods (
 mood_database.execute(create_mood_table)
 
 # add a test moods 
-# moods = mood_database.execute("INSERT INTO moods (month, day, year, mood, activity, food) VALUES ( 4, 20, 2017, 'tranquil', 'rest', 'cherries') " )
+#moods = mood_database.execute("INSERT INTO moods (month, day, year, mood, activity, food) VALUES ( 4, 20, 2017, 'tranquil', 'rest', 'cherries') " )
 
 # look into data type:
-moods = mood_database.execute("SELECT * FROM moods")
-puts moods.class
-p moods 
+# moods = mood_database.execute("SELECT * FROM moods")
+# puts moods.class
+# p moods 
 
 
 # create method for mood entry
