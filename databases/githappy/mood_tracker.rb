@@ -15,7 +15,7 @@ require 'date'
 
 # create SQLite3 database
 mood_database = SQLite3::Database.new( "moods.db" )
-@db.results_as_hash = true
+#@mood_database.results_as_hash = true
 
 # CREATE TABLE FOR DATABASE:
 create_mood_table = <<-SQL
@@ -32,6 +32,8 @@ CREATE TABLE IF NOT EXISTS moods (
  
 mood_database.execute(create_mood_table)
 
+# add a test moods 
+mood_database.execute("INSERT INTO moods (month, day, year, mood, activity, food) VALUES ( 4, 20, 2017, 'tranquil', 'rest', 'cherries') " )
 =begin # not sure if this will work
 
 moods.db do |db|
