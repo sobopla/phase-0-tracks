@@ -41,6 +41,19 @@ puts moods.class
 p moods 
 
 
+# create method for mood entry
+def create_mood_entry(db, date, mood, activity, food) #think about adding location for a 'you should move to _____ method'
+  date = Time.now
+  month = date.month
+  day = date.day
+  year = date.year
+  mood_database.execute("INSERT INTO moods (month, day, year, mood, activity, food) VALUES (?, ?, ?, ?, ?, ?)", [month, day, year, mood, activity, food])
+end 
+
+10.times do #create a lot of mood entries using Faker::date / figure out how to set variable to faker date and get month/day/yr
+  create_mood_entry()
+
+
 =begin # not sure if this will work
 
 moods.db do |db|
