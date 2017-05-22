@@ -14,27 +14,27 @@ require 'sqlite3'
 require 'date'
 
 # create SQLite3 database
-mood_database = SQLite3::Database.new( "mood.db" )
+mood_database = SQLite3::Database.new( "moods.db" )
 @db.results_as_hash = true
 
 # CREATE TABLE FOR DATABASE:
-# journal_table = <<-SQL
-# CREATE TABLE IF NOT EXISTS moods (
-#   id INTEGER PRIMARY KEY,   
-#   month INT,
-#   day INT,
-#   year INT,
-#   mood TEXT,
-#   activity TEXT,
-#   food TEXT
-#  )
-#  SQL
-#  
-#  @mood_database.execute(journal_table)
+create_mood_table = <<-SQL
+CREATE TABLE IF NOT EXISTS moods (
+  id INTEGER PRIMARY KEY,   
+  month INT,
+  day INT,
+  year INT,
+  mood TEXT,
+  activity VARCHAR(255),
+  food TEXT
+ )
+ SQL
+ 
+mood_database.execute(create_mood_table)
 
 =begin # not sure if this will work
 
-mood.db do |db|
+moods.db do |db|
   db.execute( "select * from table" ) do |row|
   p row
   end
