@@ -33,7 +33,11 @@ CREATE TABLE IF NOT EXISTS moods (
 mood_database.execute(create_mood_table)
 
 # add a test moods 
-mood_database.execute("INSERT INTO moods (month, day, year, mood, activity, food) VALUES ( 4, 20, 2017, 'tranquil', 'rest', 'cherries') " )
+moods = mood_database.execute("INSERT INTO moods (month, day, year, mood, activity, food) VALUES ( 4, 20, 2017, 'tranquil', 'rest', 'cherries') " )
+puts moods.class
+p moods 
+
+
 =begin # not sure if this will work
 
 moods.db do |db|
