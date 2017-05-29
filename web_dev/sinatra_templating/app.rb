@@ -8,7 +8,7 @@ db = SQLite3::Database.new("students.db")
 db.results_as_hash = true
 
 # show students on the home page
-# get '/' do
+get '/' do
 #? WHY DOESN'T IT WORK WHEN THIS IS COMMENTED OUT
 
   @students = db.execute("SELECT * FROM students")
