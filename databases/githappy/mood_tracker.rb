@@ -59,12 +59,41 @@ end
   create_mood_entry(mood_database, Faker::Date.backward(90).month, Faker::Date.backward(90).day, Faker::Date.backward(90).year, "happy", "dancing", "wine")
 end
 
-=begin # not sure if this will work
+create_mood_entry(mood_database, Faker::Date.backward(90).month, Faker::Date.backward(90).day, Faker::Date.backward(90).year, "happy", "singing", "cherries")
+create_mood_entry(mood_database, Faker::Date.backward(90).month, Faker::Date.backward(90).day, Faker::Date.backward(90).year, "happy", "run", "chocolate")
+create_mood_entry(mood_database, Faker::Date.backward(90).month, Faker::Date.backward(90).day, Faker::Date.backward(90).year, "sad", "run", "bread")
+create_mood_entry(mood_database, Faker::Date.backward(90).month, Faker::Date.backward(90).day, Faker::Date.backward(90).year, "happy", "driving", "cookies")
 
-moods.db do |db|
-  db.execute( "select * from table" ) do |row|
-  p row
-  end
+# METHOD to return the foods associated with mood happy
+# remove duplicates
+
+def happy_foods(db)
+        good_foods = db.execute("SELECT food FROM moods WHERE mood = 'happy'")
+        p '------------------------------------!!!!!!!!!!!!!!!!!!!!'
+        p good_foods
+        p 'before map-- )00000000)0000000000000000000000000000000'
+        good_foods.map! do |consumed|
+          consumed['food']
+        end
+          good_foods.uniq!
+          p 'AFTER UNIQ __________________________________'
+          puts "You are happy when you consume: "
+          good_foods.each do |i|
+            puts  i #{i}"
+          end
+          # good_foods.uniq
+          # puts "You are happy when you consume #{consumed['food']}" 
+       # end  
+    
+end
 
 
-=end
+happy_foods(mood_database)
+# =begin # not sure if this will work
+
+#   moods.db do |db|
+#     db.execute( "select * from table" ) do |row|
+#     p row
+#     end
+
+# =end
