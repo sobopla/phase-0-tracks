@@ -6,7 +6,7 @@
 <body>
   
   <% @students.each do |student| %>
-  <%= student['name'] %> :  <%=student['diet'] %> |
+  <%= student['name'] %> :  <%= student['diet'] %> |
   <% end %>
 
   <form action="/class" method="POST">  
